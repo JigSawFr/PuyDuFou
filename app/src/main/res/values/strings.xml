@@ -3,4 +3,5 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Options</string>
     <string name="title_activity_activities">Activités</string>
+    <string name="title_activity_shows">ShowsActivity</string>
 </resources>
