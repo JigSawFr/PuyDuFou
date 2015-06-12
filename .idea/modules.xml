@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Coonax.iml" filepath="$PROJECT_DIR$/Coonax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PuyDuFou.iml" filepath="$PROJECT_DIR$/PuyDuFou.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
