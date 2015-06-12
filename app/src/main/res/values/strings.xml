@@ -4,4 +4,5 @@
     <string name="action_settings">Options</string>
     <string name="title_activity_activities">Activités</string>
     <string name="title_activity_shows">ShowsActivity</string>
+    <string name="title_activity_show">ShowActivity</string>
 </resources>

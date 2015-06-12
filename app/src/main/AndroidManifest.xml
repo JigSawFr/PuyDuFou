@@ -32,6 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
+        <activity
+            android:name=".ui.ShowActivity"
+            android:label="@string/title_activity_show"
+            android:parentActivityName=".ui.ShowsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ShowsActivity" />
+        </activity>
     </application>
 
 </manifest>
