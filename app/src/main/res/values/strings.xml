@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Puy du Fou</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Options</string>
+    <string name="title_app">Bienvenue !</string>
+</resources>
