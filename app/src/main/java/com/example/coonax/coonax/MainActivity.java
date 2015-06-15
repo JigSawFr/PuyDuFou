@@ -27,6 +27,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button switchButtonActivities = (Button) findViewById(R.id.button_activities);
+
+
+        switchButtonActivities.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivitiesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //Toast.makeText(getApplicationContext(), "TEST", Toast.LENGTH_SHORT).show();
         PuyDuFou puyDuFouService = new RestAdapter.Builder()
                 .setEndpoint(PuyDuFou.ENDPOINT)
@@ -53,17 +64,6 @@ public class MainActivity extends Activity {
     public void afficherShops(List<Shop> shops) {
         //Toast.makeText(this, "Nb boutiques : " + shops.size(), Toast.LENGTH_SHORT).show();
         Log.d("RESTFULL", "On a " + shops.size() + " boutiques chez PuyDuOUF !");
-
-        Button switchButtonActivities = (Button) findViewById(R.id.button_activities);
-
-
-        switchButtonActivities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivitiesActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
