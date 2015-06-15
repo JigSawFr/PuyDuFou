@@ -40,6 +40,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ShowsActivity" />
         </activity>
+        <activity
+            android:name=".ui.RestaurantsActivity"
+            android:label="@string/title_activity_restaurants"
+            android:parentActivityName=".ui.ActivitiesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
+        </activity>
+        <activity
+            android:name=".ui.ShopsActivity"
+            android:label="@string/title_activity_shops"
+            android:parentActivityName=".ui.ActivitiesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
+        </activity>
     </application>
 
 </manifest>

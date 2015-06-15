@@ -1,10 +1,13 @@
 package com.example.coonax.coonax.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.coonax.coonax.R;
 
@@ -14,6 +17,36 @@ public class ActivitiesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities);
+
+        Button switchButtonShows = (Button) findViewById(R.id.button_shows);
+        Button switchButtonRestaurants = (Button) findViewById(R.id.button_restaurant);
+        Button switchButtonShops = (Button) findViewById(R.id.button_shops);
+
+        switchButtonShows.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivitiesActivity.this, ShowsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        switchButtonRestaurants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (ActivitiesActivity.this, RestaurantsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        switchButtonShops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivitiesActivity.this, ShopsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
