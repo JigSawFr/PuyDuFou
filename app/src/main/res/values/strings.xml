@@ -6,6 +6,11 @@
     <string name="title_activity_shows">Spectacles</string>
     <string name="title_activity_show">Les Vikings</string>
     <string name="title_activity_restaurants">Restaurants</string>
+    <string name="title_activity_restaurant">La Boulangerie</string>
     <string name="title_activity_shops">Boutiques</string>
     <string name="text_desc_short_show">Un village en fête est attaqué par des guerriers vikings qui surgissent du fond des eaux avec leurs drakkars pour les piller. Le spectacle met en scène des drakkars de 20 mètress de long et 10 mètres de haut, 50 animaux, 30 acteurs et 10 visisteurs invités.</string>
+    <string name="time_show">17 min</string>
+    <string name="text_desc_restaurant">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sed nisl dapibus, ullamcorper erat fermentum, facilisis est. Cras vitae vehicula est. Pellentesque leo dui, suscipit non finibus ut, accumsan nec dolor. Cras eget imperdiet ipsum. Vivamus sollicitudin ac libero at ultrices. Nulla placerat ex ut malesuada ultricies. In eu ornare ex. Nam tincidunt lobortis dictum. Fusce vitae suscipit neque.</string>
+    <string name="button_menu_restaurant">MENU</string>
+
 </resources>

@@ -56,6 +56,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
+        <activity
+            android:name=".ui.RestaurantActivity"
+            android:label="@string/title_activity_restaurant"
+            android:parentActivityName=".ui.RestaurantsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.RestaurantsActivity" />
+        </activity>
     </application>
 
 </manifest>
