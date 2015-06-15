@@ -18,7 +18,21 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.coonax.coonax.ui.ActivitiesActivity;
+import com.example.coonax.coonax.app.AppController;
 import java.util.List;
+
+/**
+ * Projet       ~~ PuyDuFou ~~
+ ****************************************
+ * Créé par JigSaw le 09/06/2015 à 21:37
+ ****************************************
+ *        ___ ______     ___ _       __
+ *       / (_) ____/____/   | |     / /
+ *  __  / / / / __/ ___/ /| | | /| / /
+ * / /_/ / / /_/ (__  ) ___ | |/ |/ /
+ * \____/_/\____/____/_/  |_|__/|__/
+ *
+ */
 
 public class MainActivity extends Activity {
 
@@ -39,7 +53,7 @@ public class MainActivity extends Activity {
         });
 
         //Toast.makeText(getApplicationContext(), "TEST", Toast.LENGTH_SHORT).show();
-        PuyDuFou puyDuFouService = new RestAdapter.Builder()
+        /*PuyDuFou puyDuFouService = new RestAdapter.Builder()
                 .setEndpoint(PuyDuFou.ENDPOINT)
                 .setLog(new AndroidLog("retrofit"))
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -58,13 +72,13 @@ public class MainActivity extends Activity {
                Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_SHORT).show();
                Log.w("RESTFULL", "FAIL: " + error);
             }
-        });
+        });*/
     }
 
-    public void afficherShops(List<Shop> shops) {
+   /* public void afficherShops(List<Shop> shops) {
         //Toast.makeText(this, "Nb boutiques : " + shops.size(), Toast.LENGTH_SHORT).show();
         Log.d("RESTFULL", "On a " + shops.size() + " boutiques chez PuyDuOUF !");
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
