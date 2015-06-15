@@ -2,8 +2,19 @@ package com.example.coonax.coonax;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+import com.example.coonax.coonax.model.Shop;
+import com.example.coonax.coonax.service.*;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.android.AndroidLog;
+import retrofit.client.Response;
+
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +23,33 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Toast.makeText(getApplicationContext(), "TEST", Toast.LENGTH_SHORT).show();
+        PuyDuFou puyDuFouService = new RestAdapter.Builder()
+                .setEndpoint(PuyDuFou.ENDPOINT)
+                .setLog(new AndroidLog("retrofit"))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build()
+                .create(PuyDuFou.class);
+
+       puyDuFouService.listShopAsync(new Callback<List<Shop>>() {
+            @Override
+            public void success(List<Shop> shops, Response response) {
+                Log.d("RESTFULL", "NICE ON A LES BOUTIQUES !!!!");
+                afficherShops(shops);
+            }
+
+           @Override
+            public void failure(RetrofitError error) {
+               Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_SHORT).show();
+               Log.w("RESTFULL", "FAIL: " + error);
+            }
+        });
+    }
+
+    public void afficherShops(List<Shop> shops) {
+        //Toast.makeText(this, "Nb boutiques : " + shops.size(), Toast.LENGTH_SHORT).show();
+        Log.d("RESTFULL", "On a " + shops.size() + " boutiques chez PuyDuOUF !");
     }
 
     @Override
