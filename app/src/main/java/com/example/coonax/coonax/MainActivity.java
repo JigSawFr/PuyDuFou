@@ -1,6 +1,7 @@
 package com.example.coonax.coonax;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,9 +14,11 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.Response;
+import android.view.View;
+import android.widget.Button;
 
+import com.example.coonax.coonax.ui.ActivitiesActivity;
 import java.util.List;
-
 
 public class MainActivity extends Activity {
 
@@ -50,6 +53,17 @@ public class MainActivity extends Activity {
     public void afficherShops(List<Shop> shops) {
         //Toast.makeText(this, "Nb boutiques : " + shops.size(), Toast.LENGTH_SHORT).show();
         Log.d("RESTFULL", "On a " + shops.size() + " boutiques chez PuyDuOUF !");
+
+        Button switchButtonActivities = (Button) findViewById(R.id.button_activities);
+
+
+        switchButtonActivities.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivitiesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
