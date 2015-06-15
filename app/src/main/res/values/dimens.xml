@@ -3,8 +3,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- ListView ONLY -->
-    <dimen name="nom">17dp</dimen>
-    <dimen name="age">13dip</dimen>
+    <dimen name="activity_listview_horizontal_margin">0dp</dimen>
+    <dimen name="activity_listview_vertical_margin">0dp</dimen>
+    <dimen name="activity_listview_left_margin">0dp</dimen>
+    <dimen name="activity_listview_right_margin">0dp</dimen>
+    <dimen name="title">17dp</dimen>
     <dimen name="description">13dip</dimen>
-    <dimen name="ville">12dip</dimen>
+    <dimen name="time">12dip</dimen>
 </resources>
