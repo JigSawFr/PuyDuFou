@@ -1,4 +1,4 @@
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                 android:id="@+id/activity_show_layout"
                 android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -22,7 +22,13 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="201dp"
-                android:layout_height="match_parent"></LinearLayout>
+                android:layout_height="match_parent">
+            <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="50dp"
+                    android:id="@+id/ratingBar"/>
+        </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
@@ -82,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_desc_short_show"
-                    android:id="@+id/text_short_desc_show"
+                    android:id="@+id/text_long_desc_show"
                     android:textColor="#ff34495e"
                     android:textSize="10pt" />
         </ScrollView>
@@ -95,4 +101,4 @@
                 android:layout_marginTop="15dp" />
     </LinearLayout>
 
-</android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

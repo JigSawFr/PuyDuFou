@@ -105,8 +105,8 @@ public class ShowsActivity extends Activity {
             puyDuFouService.listShowAsync(new Callback<List<Show>>() {
                 @Override
                 public void success(List<Show> shows, Response response) {
-                    Log.i("RESTFULL", "Les " + shows.size() + " spectacles ont été réceptionnés avec succès !");
-                    Toast.makeText(getApplicationContext(), shows.size() + " spectacles !", Toast.LENGTH_LONG).show();
+                    Log.i("PUYDUFOU", "Les " + shows.size() + " spectacles ont été réceptionnés avec succès !");
+                    Toast.makeText(getApplicationContext(), shows.size() + " spectacles disponibles", Toast.LENGTH_LONG).show();
                     myShowsList.clear();
                     myShowsList.addAll(shows);
                     myShowsAdapter.notifyDataSetChanged();
@@ -114,14 +114,14 @@ public class ShowsActivity extends Activity {
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.w("RESTFULL", "Impossible de récupérer les spectacles");
-                    Log.w("RESTFULL", error);
+                    Log.w("PUYDUFOU", "Impossible de récupérer les spectacles");
+                    Log.w("PUYDUFOU", error);
                     Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
             });
         }
         catch (Exception e) {
-            Log.w("RESTFULL", "EXCEPTION: " + e);
+            Log.w("PUYDUFOU", "EXCEPTION: " + e);
         }
     }
 
