@@ -57,6 +57,22 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
+        <activity
+            android:name=".ui.RestaurantActivity"
+            android:label="@string/title_activity_restaurant"
+            android:parentActivityName=".ui.RestaurantsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.RestaurantsActivity" />
+        </activity>
+        <activity
+            android:name=".ui.ShopActivity"
+            android:label="@string/title_activity_shop"
+            android:parentActivityName=".ui.ShopsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ShopsActivity" />
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

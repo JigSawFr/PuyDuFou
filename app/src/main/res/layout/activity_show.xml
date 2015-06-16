@@ -1,13 +1,12 @@
 <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                              xmlns:tools="http://schemas.android.com/tools"
-                                              android:id="@+id/activity_show_layout"
-                                              android:layout_width="match_parent"
-                                              android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-                                              android:paddingRight="@dimen/activity_horizontal_margin"
-                                              android:paddingTop="@dimen/activity_vertical_margin"
-                                              android:paddingBottom="@dimen/activity_vertical_margin"
-                                              tools:context="com.example.coonax.coonax.ui.ShowActivity"
-                                              android:background="#ffffffff">
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:id="@+id/activity_show_layout"
+                android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.example.coonax.coonax.ui.ShowActivity"
+                android:background="#ffffffff">
 
     <LinearLayout
             android:orientation="horizontal"
@@ -20,22 +19,28 @@
             android:id="@+id/linearLayout"
             android:layout_alignParentEnd="true">
 
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/image_bg_time_show"
-                android:src="@drawable/background_time_show"
-                android:layout_marginLeft="180dp"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="12dp" />
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="201dp"
+                android:layout_height="match_parent"></LinearLayout>
 
-        <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberPassword"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:layout_weight="1"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#34495e">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/time_show"
+                    android:id="@+id/text_time_show"
+                    android:textColor="#ffffff"
+                    android:textSize="30dp"
+                    android:textIsSelectable="false"
+                    android:autoText="false"
+                    android:gravity="center" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -83,7 +88,7 @@
         </ScrollView>
 
         <Button
-                android:layout_width="331dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:id="@+id/button_more_informations"
                 android:background="@drawable/button_more_informations"
