@@ -99,6 +99,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ScheduleActivity" />
         </activity>
+        <activity
+            android:name=".ui.PictureActivity"
+            android:label="@string/title_activity_picture"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.NextScheduleActivity"
+            android:label="@string/title_activity_next_schedule"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:parentActivityName=".ui.RestaurantActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.RestaurantActivity" />
+        </activity>
     </application>
 
 </manifest>

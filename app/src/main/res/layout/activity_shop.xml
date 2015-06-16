@@ -8,35 +8,19 @@
     android:background="@color/white">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1"
-        android:layout_marginBottom="400dp"
-        android:id="@+id/linearLayout3"
-        android:layout_alignParentEnd="true" >
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="332dp"
-        android:layout_gravity="center"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="135dp"
-        android:weightSum="1" >
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/image_shop"
             android:src="@drawable/visuel_les_vikings"
-            android:layout_marginBottom="50dp"
-            android:focusableInTouchMode="false" />
+            android:scaleType="centerInside"
+            android:layout_gravity="top|center_horizontal"
+            android:paddingBottom="300dp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -45,8 +29,15 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="245dp"
+        android:layout_marginTop="180dp"
         android:weightSum="1" >
+
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="50dp"
+                android:id="@+id/ratingBar3"
+                android:layout_gravity="center_horizontal"/>
 
         <ScrollView
             android:layout_width="match_parent"
