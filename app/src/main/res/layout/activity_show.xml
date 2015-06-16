@@ -15,7 +15,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:weightSum="1"
-            android:layout_marginBottom="400dp"
+            android:layout_marginBottom="425dp"
             android:id="@+id/linearLayout"
             android:layout_alignParentEnd="true">
 
@@ -54,19 +54,22 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="332dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="135dp"
-            android:weightSum="1">
+            android:layout_marginTop="65dp"
+            android:layout_marginBottom="185dp"
+            android:weightSum="1"
+            >
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/image_show"
-                android:src="@drawable/visuel_les_vikings"
-                android:layout_marginBottom="80dp" />
+                android:src="@drawable/placeholder"
+                android:layout_marginBottom="80dp"
+                android:scaleType="centerInside"/>
 
     </LinearLayout>
 
@@ -91,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="205dp"
                 android:id="@+id/scrollView"
-                >
+                android:textAlignment="center">
 
             <TextView
                     android:layout_width="wrap_content"

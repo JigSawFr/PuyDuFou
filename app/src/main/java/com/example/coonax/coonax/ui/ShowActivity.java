@@ -11,6 +11,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.toolbox.ImageLoader;
@@ -19,6 +20,7 @@ import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.app.AppController;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
+import com.squareup.picasso.Picasso;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -96,12 +98,14 @@ public class ShowActivity extends Activity {
                     //ImageLoader imageLoader =  AppController.getInstance().getImageLoader();
 
                     //NetworkImageView image = (NetworkImageView) findViewById(R.id.image_show);
+                    ImageView image = (ImageView) findViewById(R.id.image_show);
                     TextView description = (TextView) findViewById(R.id.text_long_desc_show);
                     TextView time = (TextView) findViewById(R.id.text_time_show);
 
                     //image.setImageUrl(myShow.getImage(), imageLoader);
                     description.setText(myShow.getLongDescription());
                     time.setText(myShow.getLenght().toString() + " min.");
+                    Picasso.with(getApplicationContext()).load(myShow.getImage()).placeholder(R.drawable.placeholder).fit().centerCrop().into(image);
                 }
 
                 @Override
