@@ -108,6 +108,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.NextScheduleActivity"
+            android:label="@string/title_activity_next_schedule"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
