@@ -20,4 +20,5 @@
     <string name="value_latitude_restaurant">46.889602</string>
     <!-- ListView -->
     <string name="lv_time_string">m</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
 </resources>

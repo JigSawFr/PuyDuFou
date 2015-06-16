@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.coonax.coonax" >
+    package="com.example.coonax.coonax" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-            android:name="com.example.coonax.coonax.app.AppController"
-            android:allowBackup="true"
-            android:icon="@mipmap/logo_pdf"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" >
+        android:name=".app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_pdf"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
         <activity
-                android:name=".MainActivity"
-                android:label="@string/app_name" >
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,44 +21,44 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".ui.ActivitiesActivity"
-                android:label="@string/title_activity_activities"
-                android:parentActivityName=".MainActivity" >
+            android:name=".ui.ActivitiesActivity"
+            android:label="@string/title_activity_activities"
+            android:parentActivityName=".MainActivity" >
             <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.coonax.coonax.MainActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
         </activity>
         <activity
-                android:name=".ui.ShowsActivity"
-                android:label="@string/title_activity_shows"
-                android:parentActivityName=".ui.ActivitiesActivity" >
+            android:name=".ui.ShowsActivity"
+            android:label="@string/title_activity_shows"
+            android:parentActivityName=".ui.ActivitiesActivity" >
             <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
         <activity
-                android:name=".ui.ShowActivity"
-                android:label="@string/title_activity_show"
-                android:parentActivityName=".ui.ShowsActivity" >
+            android:name=".ui.ShowActivity"
+            android:label="@string/title_activity_show"
+            android:parentActivityName=".ui.ShowsActivity" >
             <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.coonax.coonax.ui.ShowsActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ShowsActivity" />
         </activity>
         <activity
-                android:name=".ui.RestaurantsActivity"
-                android:label="@string/title_activity_restaurants"
-                android:parentActivityName=".ui.ActivitiesActivity" >
+            android:name=".ui.RestaurantsActivity"
+            android:label="@string/title_activity_restaurants"
+            android:parentActivityName=".ui.ActivitiesActivity" >
             <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
         <activity
-                android:name=".ui.ShopsActivity"
-                android:label="@string/title_activity_shops"
-                android:parentActivityName=".ui.ActivitiesActivity" >
+            android:name=".ui.ShopsActivity"
+            android:label="@string/title_activity_shops"
+            android:parentActivityName=".ui.ActivitiesActivity" >
             <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ActivitiesActivity" />
         </activity>
         <activity
             android:name=".ui.RestaurantActivity"
@@ -73,8 +76,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ShopsActivity" />
         </activity>
+        <activity
+            android:name=".ui.ScheduleActivity"
+            android:label="@string/title_activity_schedule"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

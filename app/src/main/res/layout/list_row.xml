@@ -13,7 +13,7 @@
             android:textSize="@dimen/title"
             android:textStyle="bold"
             android:textColor="@color/wet_asphalt"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet"
             android:singleLine="true"
             android:ellipsize="end" />
@@ -41,7 +41,7 @@
             android:layout_toRightOf="@+id/description"
             android:textSize="@dimen/description"
             android:textColor="@color/concrete"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:lines="2"
             android:maxLines="2"
             android:ellipsize="end"
