@@ -65,13 +65,11 @@ public class ShowsAdapter extends BaseAdapter {
         if (convertView == null) { convertView = inflater.inflate(R.layout.list_row, null); }
         if (imageLoader == null) { imageLoader = AppController.getInstance().getImageLoader(); }
 
-        NetworkImageView image = (NetworkImageView) convertView.findViewById(R.id.image);
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView description = (TextView) convertView.findViewById(R.id.description);
         TextView time = (TextView) convertView.findViewById(R.id.time);
 
         Show myShow = showsList.get(position);
-        image.setImageUrl(myShow.getImage(), imageLoader);
         title.setText(myShow.getName());
         description.setText(myShow.getShortDesciption());
         convertView.setTag(new Integer(Integer.valueOf(myShow.getId())));

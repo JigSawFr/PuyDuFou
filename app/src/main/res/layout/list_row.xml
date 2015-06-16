@@ -5,25 +5,26 @@
                 android:background="@drawable/list_row_selector"
                 android:padding="8dp" >
 
-    <!-- Image -->
-    <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginRight="8dp"
-            android:alpha="1" />
-
     <!-- Titre -->
     <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/image"
-            android:layout_toRightOf="@+id/image"
             android:textSize="@dimen/title"
             android:textStyle="bold"
-            android:textColor="@color/wet_asphalt" />
+            android:textColor="@color/wet_asphalt"
+            android:layout_marginTop="20dp"/>
+
+    <!-- Time -->
+    <TextView
+            android:id="@+id/time"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/asbestos"
+            android:textSize="@dimen/time"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="300dp"/>
+
 
     <!-- Description -->
     <TextView
@@ -34,16 +35,10 @@
             android:layout_marginTop="1dip"
             android:layout_toRightOf="@+id/description"
             android:textSize="@dimen/description"
-            android:textColor="@color/concrete"/>
+            android:textColor="@color/concrete"
+            android:layout_marginBottom="20dp"/>
 
     <!-- Durée -->
-    <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/asbestos"
-            android:textSize="@dimen/time" />
+
 
 </RelativeLayout>
