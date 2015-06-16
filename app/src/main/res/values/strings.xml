@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Puy du Fou</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Options</string>
-    <string name="title_app">Bienvenue !</string>
+    <string name="title_activity_activities">Activités</string>
+    <string name="title_activity_shows">Spectacles</string>
+    <string name="title_activity_show">Les Vikings</string>
+    <string name="title_activity_restaurants">Restaurants</string>
+    <string name="title_activity_shops">Boutiques</string>
+    <string name="text_desc_short_show">Un village en fête est attaqué par des guerriers vikings qui surgissent du fond des eaux avec leurs drakkars pour les piller. Le spectacle met en scène des drakkars de 20 mètress de long et 10 mètres de haut, 50 animaux, 30 acteurs et 10 visisteurs invités.</string>
 </resources>

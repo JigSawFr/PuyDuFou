@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-        <resources>
-            <color name="red_ultra_dark">#b00b0b</color>
-            <color name="red_dark">#c62323</color>
-            <color name="orange">#e67e22</color>
-            <color name="orange_dark">#d35400</color>
-            <color name="white">#ffffff</color>
-            <color name="transparent">#00000000</color>
-            <color name="date_color">#999999</color>
-            <color name="black">#000000</color>
-            <color name="gray">#999999</color>
-            <color name="blue">#0066cc</color>
-            <color name="gold">#e6b121</color>
-            <color name="blueback">#99FFFF</color>
-            <color name="articlecolor">#3399FF</color>
-            <color name="article_title">#3399FF</color>
-            <color name="cachecolor">#8ad0e8</color>
-            <color name="concrete">#95a5a6</color>
-            <color name="asbestos">#7f8c8d</color>
-            <color name="wet_asphalt">#34495e</color>
-            <color name="amethyst">#9b59b6</color>
-            <color name="peter_river">#3498db</color>
-            <color name="green_sea">#16a085</color>
-        </resources>
+<resources>
+    <color name="orange">#e67e22</color>
+    <color name="orange_dark">#d35400</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="date_color">#999999</color>
+    <color name="black">#000000</color>
+    <color name="gray">#999999</color>
+    <color name="blue">#0066cc</color>
+    <color name="gold">#e6b121</color>
+    <color name="blueback">#99FFFF</color>
+    <color name="articlecolor">#3399FF</color>
+    <color name="article_title">#3399FF</color>
+    <color name="cachecolor">#8ad0e8</color>
+    <color name="concrete">#95a5a6</color>
+    <color name="asbestos">#7f8c8d</color>
+    <color name="wet_asphalt">#34495e</color>
+    <color name="amethyst">#9b59b6</color>
+    <color name="peter_river">#3498db</color>
+    <color name="green_sea">#16a085</color>
+    <color name="alizarin">#e74c3c</color>
+    <!-- ListView ONLY -->
+    <color name="genre">#666666</color>
+    <color name="year">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+</resources>

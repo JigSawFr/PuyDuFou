@@ -2,6 +2,19 @@ package com.example.coonax.coonax.model;
 
 import com.google.gson.annotations.Expose;
 
+/**
+ * Projet       ~~ PuyDuFou ~~
+ ****************************************
+ * Créé par JigSaw le 15/06/2015 à 21:37
+ ****************************************
+ *        ___ ______     ___ _       __
+ *       / (_) ____/____/   | |     / /
+ *  __  / / / / __/ ___/ /| | | /| / /
+ * / /_/ / / /_/ (__  ) ___ | |/ |/ /
+ * \____/_/\____/____/_/  |_|__/|__/
+ *
+ */
+
 public class Restaurant {
 
     @Expose
