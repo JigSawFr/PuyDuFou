@@ -23,22 +23,23 @@
                 android:orientation="horizontal"
                 android:layout_width="201dp"
                 android:layout_height="match_parent">
-            <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="50dp"
-                    android:id="@+id/ratingBar"/>
+
+            <Button
+                    android:layout_width="194dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/button_moreinfo_show"
+                    android:background="@drawable/button_moreinfo_show"/>
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="61dp"
+                android:layout_height="wrap_content"
                 android:background="#34495e">
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:text="@string/time_show"
                     android:id="@+id/text_time_show"
                     android:textColor="#ffffff"
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/image_show"
                 android:src="@drawable/visuel_les_vikings"
-                android:layout_marginBottom="50dp" />
+                android:layout_marginBottom="80dp" />
 
     </LinearLayout>
 
@@ -75,14 +76,22 @@
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="245dp"
+            android:layout_marginTop="220dp"
             android:weightSum="1">
+
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="50dp"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="center_horizontal"
+                />
 
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="174dp"
+                android:layout_height="205dp"
                 android:id="@+id/scrollView"
-                android:layout_weight="0.46">
+                >
 
             <TextView
                     android:layout_width="wrap_content"
@@ -93,12 +102,6 @@
                     android:textSize="10pt" />
         </ScrollView>
 
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:id="@+id/button_more_informations"
-                android:background="@drawable/button_more_informations"
-                android:layout_marginTop="15dp" />
     </LinearLayout>
 
 </RelativeLayout>
