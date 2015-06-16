@@ -107,6 +107,7 @@ public class ShowsActivity extends Activity {
                 public void success(List<Show> shows, Response response) {
                     Log.i("RESTFULL", "Les " + shows.size() + " spectacles ont été réceptionnés avec succès !");
                     Toast.makeText(getApplicationContext(), shows.size() + " spectacles !", Toast.LENGTH_LONG).show();
+                    myShowsList.clear();
                     myShowsList.addAll(shows);
                     myShowsAdapter.notifyDataSetChanged();
                 }
