@@ -18,4 +18,6 @@
     <string name="value_latitude_shop">46.889602</string>
     <string name="value_longitude_restaurant"> -0.928116</string>
     <string name="value_latitude_restaurant">46.889602</string>
+    <!-- ListView -->
+    <string name="lv_time_string">m</string>
 </resources>
