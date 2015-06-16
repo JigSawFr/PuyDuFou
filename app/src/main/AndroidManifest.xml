@@ -92,6 +92,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ScheduleActivity" />
         </activity>
+        <activity
+            android:name=".ui.MyScheduleActivity"
+            android:label="@string/title_activity_my_schedule"
+            android:parentActivityName=".ui.ScheduleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ScheduleActivity" />
+        </activity>
     </application>
 
 </manifest>
