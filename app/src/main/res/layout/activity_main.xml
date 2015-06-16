@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_activities"
             android:layout_gravity="left|top"
-            android:background="@drawable/button_activities"
-            android:onClick="@string/hello_world"/>
+            android:background="@drawable/button_activities"/>
 
         <Button
             android:layout_width="154dp"
@@ -27,7 +26,6 @@
             android:id="@+id/button_picture"
             android:layout_gravity="right|top"
             android:background="@drawable/button_picture"
-            android:onClick="@string/hello_world"
             android:nestedScrollingEnabled="false" />
 
         <LinearLayout

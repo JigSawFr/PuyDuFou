@@ -10,7 +10,7 @@ import retrofit.http.Path;
 /**
  * Projet       ~~ PuyDuFou ~~
  ****************************************
- * Créé par JigSaw le 09/06/2015 à 21:37
+ * Créé par JigSaw le 15/06/2015 à 21:37
  ****************************************
  *        ___ ______     ___ _       __
  *       / (_) ____/____/   | |     / /
@@ -35,7 +35,7 @@ public interface PuyDuFou {
     void listShowAsync(Callback<List<Show>> callback);
 
     @GET("/com.puydufou.entity.shows/{id}")
-    void showAsync(@Path("id") int id, Callback<Shop> callback);
+    void showAsync(@Path("id") int id, Callback<Show> callback);
 
     @GET("/com.puydufou.entity.restaurants")
     void listRestaurantAsync(Callback<List<Restaurant>> callback);

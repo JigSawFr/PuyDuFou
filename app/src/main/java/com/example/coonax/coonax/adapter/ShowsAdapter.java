@@ -20,7 +20,7 @@ import com.android.volley.toolbox.NetworkImageView;
 /**
  * Projet       ~~ PuyDuFou ~~
  ****************************************
- * Créé par JigSaw le 09/06/2015 à 21:37
+ * Créé par JigSaw le 15/06/2015 à 21:37
  ****************************************
  *        ___ ______     ___ _       __
  *       / (_) ____/____/   | |     / /
@@ -74,6 +74,7 @@ public class ShowsAdapter extends BaseAdapter {
         image.setImageUrl(myShow.getImage(), imageLoader);
         title.setText(myShow.getName());
         description.setText(myShow.getShortDesciption());
+        convertView.setTag(new Integer(Integer.valueOf(myShow.getId())));
 
         return convertView;
     }
