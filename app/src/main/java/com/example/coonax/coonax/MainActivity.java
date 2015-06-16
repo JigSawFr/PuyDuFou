@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import com.example.coonax.coonax.ui.ActivitiesActivity;
+import com.example.coonax.coonax.ui.PictureActivity;
 import com.example.coonax.coonax.ui.ScheduleActivity;
 
 /**
@@ -45,6 +46,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button switchButtonPhoto = (Button) findViewById(R.id.button_picture);
+        switchButtonPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PictureActivity.class);
                 startActivity(intent);
             }
         });
