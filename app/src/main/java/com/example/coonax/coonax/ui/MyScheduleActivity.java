@@ -16,7 +16,7 @@ public class MyScheduleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_schedule);
 
-        //Affichage de la ActionBar coloré
+        //Affichage de la ActionBar colorÃ©
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3498db"));
         ab.setBackgroundDrawable(colorDrawable);

@@ -1,7 +1,6 @@
 package com.example.coonax.coonax.adapter;
 
 import com.example.coonax.coonax.R;
-import com.example.coonax.coonax.app.AppController;
 import com.example.coonax.coonax.model.Show;
 
 import java.util.List;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import org.parceler.apache.commons.lang.WordUtils;
 
 /**
  * Projet       ~~ PuyDuFou ~~
@@ -36,7 +36,6 @@ public class ShowsAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Show> showsList;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public ShowsAdapter(Activity activity, List<Show> showsList) {
         this.activity = activity;
@@ -63,14 +62,13 @@ public class ShowsAdapter extends BaseAdapter {
 
         if (inflater == null) { inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE); }
         if (convertView == null) { convertView = inflater.inflate(R.layout.list_row, null); }
-        if (imageLoader == null) { imageLoader = AppController.getInstance().getImageLoader(); }
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView description = (TextView) convertView.findViewById(R.id.description);
         TextView time = (TextView) convertView.findViewById(R.id.time);
 
         Show myShow = showsList.get(position);
-        title.setText(myShow.getName());
+        title.setText(WordUtils.capitalize(myShow.getName()));
         description.setText(myShow.getLongDescription());
         convertView.setTag(new Integer(Integer.valueOf(myShow.getId())));
         time.setText(myShow.getLenght().toString() + "m");

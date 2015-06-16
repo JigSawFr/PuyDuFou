@@ -19,12 +19,12 @@ public class ScheduleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        //Affichage de la ActionBar coloré
+        //Affichage de la ActionBar colorÃ©
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3498db"));
         ab.setBackgroundDrawable(colorDrawable);
 
-        //Bouton d'accès à l'activité BestScheduleActivity
+        //Bouton d'accÃ¨s Ã  l'activitÃ© BestScheduleActivity
 
         Button switchButtonBestSchedule = (Button) findViewById(R.id.button_best_schedule);
         switchButtonBestSchedule.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class ScheduleActivity extends Activity {
             }
         });
 
-        //Bouton d'accès à l'activité MyScheduleActivity
+        //Bouton d'accÃ¨s Ã  l'activitÃ© MyScheduleActivity
 
         Button switchButtonAddSchedule = (Button) findViewById(R.id.button_add_schedule);
         switchButtonAddSchedule.setOnClickListener(new View.OnClickListener() {
