@@ -75,6 +75,7 @@ public class ShowsAdapter extends BaseAdapter {
         title.setText(myShow.getName());
         description.setText(myShow.getShortDesciption());
         convertView.setTag(new Integer(Integer.valueOf(myShow.getId())));
+        time.setText(myShow.getLenght());
 
         return convertView;
     }
