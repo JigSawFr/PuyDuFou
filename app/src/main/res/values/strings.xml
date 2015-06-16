@@ -5,6 +5,7 @@
     <string name="title_activity_activities">Activités</string>
     <string name="title_activity_shows">Spectacles</string>
     <string name="title_activity_show">Spectacle</string>
+    <string name="title_activity_more_info_show">Spectacle</string>
     <string name="title_activity_restaurants">Restaurants</string>
     <string name="title_activity_restaurant">La Boulangerie</string>
     <string name="title_activity_shops">Boutiques</string>
@@ -33,5 +34,6 @@
     <string name="text_value_dessert_menu">OEufs à la neige</string>
     <!-- ListView -->
     <string name="lv_time_string">m</string>
+
 
 </resources>

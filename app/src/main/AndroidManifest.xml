@@ -123,6 +123,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.RestaurantActivity" />
         </activity>
+        <activity
+            android:name=".ui.MoreInfoShowActivity"
+            android:label="@string/title_activity_more_info_show"
+            android:parentActivityName=".ui.ShowActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.ui.ShowActivity" />
+        </activity>
     </application>
 
 </manifest>

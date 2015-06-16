@@ -11,10 +11,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.*;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
@@ -53,6 +51,15 @@ public class ShowActivity extends Activity {
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#34495e"));
         ab.setBackgroundDrawable(colorDrawable);
+
+        Button switchButtonMoreInfoShow = (Button) findViewById(R.id.button_moreinfo_show);
+        switchButtonMoreInfoShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowActivity.this, MoreInfoShowActivity.class);
+                startActivity(intent);
+            }
+        });
         /* ~~ COONAX ## END ~~ */
 
         Intent mySingleView = getIntent();
