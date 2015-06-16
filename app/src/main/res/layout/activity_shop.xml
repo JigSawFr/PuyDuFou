@@ -50,8 +50,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="174dp"
-            android:id="@+id/scrollView3"
+            android:layout_height="150dp"
+            android:id="@+id/scrollView_desc_shop"
             android:layout_weight="0.46" >
 
             <TextView
@@ -68,13 +68,14 @@
             android:layout_width="match_parent"
             android:layout_height="33dp"
             android:background="@color/peter_river_dark"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Longitude :"
-                android:id="@+id/title_longitude"
+                android:id="@+id/title_longitude_shop"
                 android:layout_weight="0.47"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
@@ -84,8 +85,8 @@
             <TextView
                 android:layout_width="116dp"
                 android:layout_height="wrap_content"
-                android:text="@string/value_longitude"
-                android:id="@+id/text_value_longitude"
+                android:text="@string/value_longitude_shop"
+                android:id="@+id/text_value_longitude_shop"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:gravity="end"
@@ -103,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:text="Latitude :"
-                android:id="@+id/title_latitude"
+                android:id="@+id/title_latitude_shop"
                 android:layout_weight="0.40"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
@@ -113,8 +114,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/value_latitude"
-                android:id="@+id/text_value_latitude"
+                android:text="@string/value_latitude_shop"
+                android:id="@+id/text_value_latitude_shop"
                 android:layout_weight="0.58"
                 android:textColor="@color/white"
                 android:textSize="20dp"
