@@ -22,8 +22,7 @@ import retrofit.http.Path;
 
 public interface PuyDuFou {
 
-    //String ENDPOINT = "http://10.154.128.142:10080/puyDuFou/webresources";
-    String ENDPOINT = "http://5.196.114.24:10080/puyDuFou/webresources";
+    String ENDPOINT = "http://10.154.128.142:10080/puyDuFou/webresources";
 
     @GET("/com.puydufou.entity.shops")
     void listShopAsync(Callback<List<Shop>> callback);

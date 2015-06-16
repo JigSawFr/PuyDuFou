@@ -88,6 +88,7 @@ public class ShowsActivity extends Activity {
                  public void run() {
                     mySwipeRefreshLayout.setRefreshing(true);
                     refreshShowsList();
+                    mySwipeRefreshLayout.setRefreshing(false);
                  }
              }
         );
