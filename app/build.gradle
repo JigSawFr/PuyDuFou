@@ -31,4 +31,5 @@ dependencies {
     compile 'org.parceler:parceler:0.2.13+'
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
     compile 'com.android.support:support-v4:22+'
+    compile 'com.squareup.picasso:picasso:2.5+'
 }
