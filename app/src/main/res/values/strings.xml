@@ -10,6 +10,7 @@
     <string name="title_activity_shops">Boutiques</string>
     <string name="title_activity_schedule">Programme Puy du Fou</string>
     <string name="title_activity_best_schedule">Programme Conseillé</string>
+    <string name="title_activity_my_schedule">Mon Programme</string>
     <string name="text_desc_short_show">Chargement de la description ...</string>
     <string name="time_show">N/A</string>
     <string name="text_desc_restaurant">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sed nisl dapibus, ullamcorper erat fermentum, facilisis est. Cras vitae vehicula est. Pellentesque leo dui, suscipit non finibus ut, accumsan nec dolor. Cras eget imperdiet ipsum. Vivamus sollicitudin ac libero at ultrices. Nulla placerat ex ut malesuada ultricies. In eu ornare ex. Nam tincidunt lobortis dictum. Fusce vitae suscipit neque.</string>
