@@ -95,7 +95,7 @@ public class ShowActivity extends Activity {
             puyDuFouService.showMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
                 @Override
                 public void success(Mark myMark, Response response) {
-                    Log.i("PUYDUFOU", "Le spectacle a bien été noté" + myMark.getStatut());
+                    Log.i("PUYDUFOU", "Le spectacle a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
                 }
 
                 @Override

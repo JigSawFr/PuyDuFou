@@ -87,7 +87,7 @@ public class ShopActivity extends Activity {
             puyDuFouService.shopMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
                 @Override
                 public void success(Mark myMark, Response response) {
-                    Log.i("PUYDUFOU", "RATING_SHOP :: La boutique a bien été noté" + myMark.getStatut());
+                    Log.i("PUYDUFOU", "RATING_SHOP :: La boutique a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
                 }
 
                 @Override

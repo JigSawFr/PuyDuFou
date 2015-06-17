@@ -19,24 +19,24 @@ import com.google.gson.annotations.Expose;
 public class Mark {
 
     @Expose
-    private String statut;
+    private Integer average;
 
     /**
      *
      * @return
-     * The statut
+     * The average
      */
-    public String getStatut() {
-        return statut;
+    public Integer getAverage() {
+        return average;
     }
 
     /**
      *
-     * @param statut
-     * The statut
+     * @param average
+     * The average
      */
-    public void setStatut(String statut) {
-        this.statut = statut;
+    public void setAverage(Integer average) {
+        this.average = average;
     }
 
 }

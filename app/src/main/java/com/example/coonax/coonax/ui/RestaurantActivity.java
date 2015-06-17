@@ -9,12 +9,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import android.widget.*;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Mark;
 import com.example.coonax.coonax.model.Restaurant;
-import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
 import com.squareup.picasso.Picasso;
 import org.parceler.apache.commons.lang.WordUtils;
@@ -86,7 +87,7 @@ public class RestaurantActivity extends Activity {
             puyDuFouService.restaurantMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
                 @Override
                 public void success(Mark myMark, Response response) {
-                    Log.i("PUYDUFOU", "RATING_RESTAURANT :: Le restaurant a bien été noté" + myMark.getStatut());
+                    Log.i("PUYDUFOU", "RATING_RESTAURANT :: Le restaurant a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
                 }
 
                 @Override
