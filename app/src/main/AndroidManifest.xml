@@ -78,26 +78,26 @@
         <activity
             android:name=".ui.ScheduleActivity"
             android:label="@string/title_activity_schedule"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName="ui.SchedulesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.coonax.coonax.MainActivity" />
+                android:value="com.example.coonax.coonax.ui.SchedulesActivity" />
         </activity>
         <activity
             android:name=".ui.BestScheduleActivity"
             android:label="@string/title_activity_best_schedule"
-            android:parentActivityName=".ui.ScheduleActivity" >
+            android:parentActivityName=".ui.SchedulesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.coonax.coonax.ui.ScheduleActivity" />
+                android:value="com.example.coonax.coonax.ui.SchedulesActivity" />
         </activity>
         <activity
             android:name=".ui.MyScheduleActivity"
             android:label="@string/title_activity_my_schedule"
-            android:parentActivityName=".ui.ScheduleActivity" >
+            android:parentActivityName=".ui.SchedulesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.coonax.coonax.ui.ScheduleActivity" />
+                android:value="com.example.coonax.coonax.ui.SchedulesActivity" />
         </activity>
         <activity
             android:name=".ui.PictureActivity"
@@ -130,6 +130,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.coonax.coonax.ui.ShowActivity" />
+        </activity>
+        <activity
+            android:name=".ui.SchedulesActivity"
+            android:label="@string/title_activity_schedules"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.coonax.coonax.MainActivity" />
         </activity>
     </application>
 
