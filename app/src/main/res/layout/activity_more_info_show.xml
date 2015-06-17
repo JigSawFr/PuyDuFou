@@ -22,7 +22,7 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.63"
+                android:layout_weight="0.66"
                 android:background="@color/wet_asphalt"
                 android:weightSum="1">
 
@@ -76,7 +76,7 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.82"
+                android:layout_weight="0.70"
                 android:background="@color/wet_asphalt">
 
             <TextView
@@ -85,7 +85,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/text_nbactor_show"
                     android:id="@+id/text_nbactor_show"
-                    android:layout_weight="1.08"
+                    android:layout_weight="0.77"
                     android:textColor="@color/white"
                     android:gravity="center|center_horizontal"/>
         </LinearLayout>
@@ -95,7 +95,7 @@
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_weight="0.15"
+                android:layout_weight="0.37"
                 android:background="@color/wet_asphalt_light">
 
             <TextView
@@ -121,25 +121,6 @@
             android:layout_marginBottom="300dp"
             android:gravity="center_horizontal"
             android:id="@+id/linearLayout6">
-
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="71dp"
-                android:layout_height="fill_parent"
-                android:background="@color/wet_asphalt"
-                android:layout_marginLeft="-17dp">
-
-            <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/text_mark_show"
-                    android:id="@+id/text_mark_show"
-                    android:layout_weight="1.08"
-                    android:textColor="@color/white"
-                    android:gravity="center|center_horizontal"
-                    />
-        </LinearLayout>
 
         <RatingBar
                 android:layout_width="wrap_content"
@@ -203,7 +184,7 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.36"
+                android:layout_weight="0.50"
                 android:background="@color/wet_asphalt"
                 android:weightSum="1">
 
@@ -215,7 +196,8 @@
                     android:id="@+id/text_longitude_show"
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"
+                    android:layout_weight="0.57"/>
         </LinearLayout>
 
         <LinearLayout
@@ -224,7 +206,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.64"
                 android:background="@color/wet_asphalt_light"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="10dp"
+                android:weightSum="1">
 
             <TextView
                     android:layout_width="match_parent"
@@ -234,7 +217,8 @@
                     android:id="@+id/text_value_longitude_more_show"
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:layout_weight="0.57"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -252,9 +236,10 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.45"
+                android:layout_weight="0.58"
                 android:background="@color/wet_asphalt"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:paddingRight="1dp">
 
             <TextView
                     android:layout_width="match_parent"
@@ -264,14 +249,15 @@
                     android:id="@+id/text_latitude_show"
                     android:textColor="@color/white"
                     android:textSize="20dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_weight="0.57"/>
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.75"
+                android:layout_weight="0.57"
                 android:layout_marginLeft="10dp"
                 android:background="@color/wet_asphalt_light"
                 android:weightSum="1">
@@ -285,7 +271,7 @@
                     android:textSize="20dp"
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:layout_weight="0.67"/>
+                    android:layout_weight="0.57"/>
         </LinearLayout>
     </LinearLayout>
 
