@@ -44,4 +44,7 @@ public interface PuyDuFou {
 
     @GET("/com.puydufou.entity.restaurants/{id}")
     void restaurantAsync(@Path("id") int id, Callback<Restaurant> callback);
+
+    @GET("/com.puydufou.entity.restaurants/notes/{id}/{mark}")
+    void restaurantMarkAsync(@Path("id") int id, @Path("mark") int mark, Callback<Mark> callback);
 }

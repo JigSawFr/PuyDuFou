@@ -28,6 +28,8 @@ public class Restaurant {
     @Expose
     private String name;
     @Expose
+    private Integer note;
+    @Expose
     private String shortDescription;
 
     /**
@@ -118,6 +120,24 @@ public class Restaurant {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     *
+     * @return
+     * The note
+     */
+    public Integer getNote() {
+        return note;
+    }
+
+    /**
+     *
+     * @param note
+     * The note
+     */
+    public void setNote(Integer note) {
+        this.note = note;
     }
 
     /**
