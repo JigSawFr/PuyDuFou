@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/title"
             android:textStyle="bold"
-            android:textColor="@color/wet_asphalt"
+            android:textColor="@color/amethyst"
             android:layout_marginTop="10dp"
             android:text="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet"
             android:singleLine="true"

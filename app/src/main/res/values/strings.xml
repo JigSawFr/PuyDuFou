@@ -36,8 +36,7 @@
     <string name="text_nbactor_show">Nombre d\'Acteurs :</string>
     <string name="text_mark_show">Note :</string>
     <string name="text_history_show">Lien Historique</string>
-
-
+    <string name="text_value_times_show">Heures du spectacle</string>
     <string name="text_value_create_show">2014</string>
     <string name="text_value_nbactor_show">37</string>
     <string name="text_value_history_link_show">Lorem ipsum dolor sit ame Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit</string>
