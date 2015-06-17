@@ -1,0 +1,291 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.example.coonax.coonax.ui.MoreInfoShowActivity"
+                android:background="@color/white">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="425dp"
+            android:weightSum="1">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.63"
+                android:background="@color/wet_asphalt"
+                android:weightSum="1">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_create_show"
+                    android:id="@+id/text_date_show"
+                    android:layout_weight="1.08"
+                    android:textColor="@color/white"
+                    android:gravity="center|center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.27"
+                android:background="@color/wet_asphalt_light"
+                android:weightSum="1"
+                android:layout_marginRight="-13dp">
+
+            <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_value_create_show"
+                    android:id="@+id/text_date_create_show"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.28"
+                    />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="365dp"
+            android:id="@+id/linearLayout5">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.82"
+                android:background="@color/wet_asphalt">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_nbactor_show"
+                    android:id="@+id/text_nbactor_show"
+                    android:layout_weight="1.08"
+                    android:textColor="@color/white"
+                    android:gravity="center|center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.15"
+                android:background="@color/wet_asphalt_light">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_value_nbactor_show"
+                    android:id="@+id/text_value_nbactor_show"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.28"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignTop="@+id/linearLayout5"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="62dp"
+            android:layout_marginBottom="300dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/linearLayout6">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="71dp"
+                android:layout_height="fill_parent"
+                android:background="@color/wet_asphalt"
+                android:layout_marginLeft="-17dp">
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_mark_show"
+                    android:id="@+id/text_mark_show"
+                    android:layout_weight="1.08"
+                    android:textColor="@color/white"
+                    android:gravity="center|center_horizontal"
+                    />
+        </LinearLayout>
+
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignTop="@+id/linearLayout6"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="62dp"
+            android:layout_marginBottom="110dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@color/wet_asphalt">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_history_show"
+                    android:id="@+id/text_history_show"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:text="@string/text_value_history_link_show"
+                android:id="@+id/text_history_link_show"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/wet_asphalt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="-324dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+            android:layout_marginTop="360dp"
+            android:weightSum="1">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.36"
+                android:background="@color/wet_asphalt"
+                android:weightSum="1">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Longitude :"
+                    android:id="@+id/text_longitude_show"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.64"
+                android:background="@color/wet_asphalt_light"
+                android:layout_marginLeft="10dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/value_longitude_show"
+                    android:id="@+id/text_value_longitude_show"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="420dp"
+            android:weightSum="1">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:background="@color/wet_asphalt"
+                android:weightSum="1">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Latitude :"
+                    android:id="@+id/text_latitude_show"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:layout_marginLeft="10dp"
+                android:background="@color/wet_asphalt_light"
+                android:weightSum="1">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/value_latitude_show"
+                    android:id="@+id/text_value_latitude_show"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_weight="0.67"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

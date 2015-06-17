@@ -7,18 +7,17 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
+import android.view.View;
+import android.widget.*;
 import com.example.coonax.coonax.R;
-import com.example.coonax.coonax.app.AppController;
+import com.example.coonax.coonax.model.Mark;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
+import com.squareup.picasso.Picasso;
+import org.parceler.apache.commons.lang.WordUtils;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -41,6 +40,7 @@ import retrofit.client.Response;
 public class ShowActivity extends Activity {
 
     Integer mySingleId = null;
+    RatingBar mark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,30 +51,64 @@ public class ShowActivity extends Activity {
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#34495e"));
         ab.setBackgroundDrawable(colorDrawable);
+
+        Button switchButtonMoreInfoShow = (Button) findViewById(R.id.button_moreinfo_show);
+        switchButtonMoreInfoShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowActivity.this, MoreInfoShowActivity.class);
+                startActivity(intent);
+            }
+        });
         /* ~~ COONAX ## END ~~ */
 
         Intent mySingleView = getIntent();
+        mark = (RatingBar) findViewById(R.id.rating_show);
+
         mySingleId = mySingleView.getExtras().getInt("id");
-        Log.i("SHOW_ACTIVITY", "Demande d'informations sur le spectacle portant l'ID n°" + mySingleId);
+        Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Demande d'informations sur le spectacle portant l'ID n°" + mySingleId);
+        refreshShow();
 
-        final SwipeRefreshLayout mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_show_layout);
-
-        mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refreshShow();
-                mySwipeRefreshLayout.setRefreshing(false);
-            }
-        });
-
-        mySwipeRefreshLayout.post(new Runnable() {
-                                      @Override
-                                      public void run() {
-                                          mySwipeRefreshLayout.setRefreshing(true);
-                                          refreshShow();
-                                      }
-                                  }
+        mark.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
+               @Override public void onRatingChanged(RatingBar mark, float rating, boolean fromUser){
+                   //mark.setRating(rating);
+                   if(fromUser) {
+                       mark.setIsIndicator(true);
+                       Integer userRating = Math.round(rating);
+                       Toast.makeText(getApplicationContext(), "Merci ! Votre note: " + userRating + "/5", Toast.LENGTH_LONG).show();
+                       markShow(userRating);
+                       Log.i("PUYDUFOU", "RATING_ACTIVITY :: Notation de l'activité avec la note " + userRating + "/5 (USER ? " + fromUser + ")");
+                   }
+               }
+           }
         );
+    }
+
+    private void markShow(int myUserMark) {
+        PuyDuFou puyDuFouService = new RestAdapter.Builder()
+                .setEndpoint(PuyDuFou.ENDPOINT)
+                .setLog(new AndroidLog("retrofit"))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build()
+                .create(PuyDuFou.class);
+        try {
+            puyDuFouService.showMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
+                @Override
+                public void success(Mark myMark, Response response) {
+                    Log.i("PUYDUFOU", "Le spectacle a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    Log.w("PUYDUFOU", "Impossible de noter le spectacle");
+                    Log.w("PUYDUFOU", error);
+                    Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        catch (Exception e) {
+            Log.w("PUYDUFOU", "EXCEPTION: " + e);
+        }
     }
 
     private void refreshShow() {
@@ -88,27 +122,31 @@ public class ShowActivity extends Activity {
             puyDuFouService.showAsync(mySingleId, new Callback<Show>() {
                 @Override
                 public void success(Show myShow, Response response) {
-                    Log.i("RESTFULL", "Le spectacle " + myShow.getName() + " a été réceptionné avec succès !");
+                    Log.i("PUYDUFOU", "Le spectacle " + myShow.getName() + " a été réceptionné avec succès !");
+                    Log.i("PUYDUFOU", myShow.toString());
 
-                    ImageLoader imageLoader =  AppController.getInstance().getImageLoader();
+                    ImageView image = (ImageView) findViewById(R.id.image_show);
+                    TextView description = (TextView) findViewById(R.id.text_long_desc_show);
+                    TextView time = (TextView) findViewById(R.id.text_time_show);
+                    RatingBar mark = (RatingBar) findViewById(R.id.rating_show);
 
-                    NetworkImageView image = (NetworkImageView) findViewById(R.id.image_show);
-                    TextView description = (TextView) findViewById(R.id.text_short_desc_show);
-
-                    image.setImageUrl(myShow.getImage(), imageLoader);
-                    description.setText(myShow.getShortDesciption());
+                    setTitle(WordUtils.capitalize(myShow.getName()));
+                    description.setText(myShow.getLongDescription());
+                    time.setText(myShow.getLenght().toString() + " min.");
+                    Picasso.with(getApplicationContext()).load(myShow.getImage()).placeholder(R.drawable.placeholder).fit().centerCrop().into(image);
+                    mark.setRating(myShow.getNote().floatValue());
                 }
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.w("RESTFULL", "Impossible de récupérer le spectacle");
-                    Log.w("RESTFULL", error);
+                    Log.w("PUYDUFOU", "Impossible de récupérer le spectacle");
+                    Log.w("PUYDUFOU", error);
                     Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
             });
         }
         catch (Exception e) {
-            Log.w("RESTFULL", "EXCEPTION: " + e);
+            Log.w("PUYDUFOU", "EXCEPTION: " + e);
         }
     }
 

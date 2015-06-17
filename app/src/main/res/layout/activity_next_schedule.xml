@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.example.coonax.coonax.ui.NextScheduleActivity"
+                android:background="@color/white">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1"
+            android:layout_marginTop="20dp"
+            android:id="@+id/linearLayout7">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:background="@color/green_sea_dark">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_value_next_activity"
+                    android:id="@+id/text_next_activity"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.59"
+                android:background="@color/green_sea"
+                android:weightSum="1">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc_value_next_activity"
+                    android:id="@+id/desc_next_activity"
+                    android:layout_weight="1.12"
+                    android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:background="@color/green_sea_dark"
+                android:weightSum="1"
+                android:layout_marginTop="0dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/time_value_next_activity"
+                    android:id="@+id/time_next_activity"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_compass"
+            android:layout_below="@+id/linearLayout7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/compass"
+            android:layout_marginBottom="20dp"/>
+</RelativeLayout>

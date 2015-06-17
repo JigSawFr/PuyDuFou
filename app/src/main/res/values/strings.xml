@@ -4,18 +4,49 @@
     <string name="action_settings">Options</string>
     <string name="title_activity_activities">Activités</string>
     <string name="title_activity_shows">Spectacles</string>
-    <string name="title_activity_show">Les Vikings</string>
+    <string name="title_activity_show">Spectacle</string>
+    <string name="title_activity_more_info_show">Spectacle</string>
     <string name="title_activity_restaurants">Restaurants</string>
-    <string name="title_activity_restaurant">La Boulangerie</string>
+    <string name="title_activity_restaurant">Restaurant</string>
     <string name="title_activity_shops">Boutiques</string>
-    <string name="text_desc_short_show">Un village en fête est attaqué par des guerriers vikings qui surgissent du fond des eaux avec leurs drakkars pour les piller. Le spectacle met en scène des drakkars de 20 mètress de long et 10 mètres de haut, 50 animaux, 30 acteurs et 10 visisteurs invités.</string>
-    <string name="time_show">17 min</string>
+    <string name="title_activity_schedule">Programme Puy du Fou</string>
+    <string name="title_activity_best_schedule">Programme Conseillé</string>
+    <string name="title_activity_my_schedule">Mon Programme</string>
+    <string name="title_activity_picture">Photo</string>
+    <string name="title_activity_next_schedule">Prochaine Activité</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="text_desc_short_show">Chargement de la description ...</string>
+    <string name="time_show">N/A</string>
     <string name="text_desc_restaurant">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sed nisl dapibus, ullamcorper erat fermentum, facilisis est. Cras vitae vehicula est. Pellentesque leo dui, suscipit non finibus ut, accumsan nec dolor. Cras eget imperdiet ipsum. Vivamus sollicitudin ac libero at ultrices. Nulla placerat ex ut malesuada ultricies. In eu ornare ex. Nam tincidunt lobortis dictum. Fusce vitae suscipit neque.</string>
     <string name="button_menu_restaurant">MENU</string>
-    <string name="title_activity_shop">Caverne des Pirates</string>
+    <string name="value_longitude_restaurant"> -0.928116</string>
+    <string name="value_latitude_restaurant">46.889602</string>
+    <string name="title_activity_shop">Boutique</string>
     <string name="text_desc_shop">Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti.</string>
     <string name="value_longitude_shop"> -0.928116</string>
     <string name="value_latitude_shop">46.889602</string>
-    <string name="value_longitude_restaurant"> -0.928116</string>
-    <string name="value_latitude_restaurant">46.889602</string>
+    <string name="text_price_menu">14 €</string>
+    <string name="text_entree_menu">Entrée</string>
+    <string name="text_plat_menu">Plat</string>
+    <string name="text_dessert_menu">Dessert</string>
+    <string name="text__value_entree_menu">Salade de riz accompagné de thons</string>
+    <string name="text_value_plat_menu">Entrecôte sauce béarnaise avec frites</string>
+    <string name="text_value_dessert_menu">OEufs à la neige</string>
+    <string name="text_create_show">Date Création :</string>
+    <string name="text_nbactor_show">Nombre d\'Acteurs :</string>
+    <string name="text_mark_show">Note :</string>
+    <string name="text_history_show">Lien Historique</string>
+    <string name="text_value_times_show">Heures du spectacle</string>
+    <string name="text_value_create_show">2014</string>
+    <string name="text_value_nbactor_show">37</string>
+    <string name="text_value_history_link_show">Lorem ipsum dolor sit ame Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit</string>
+    <string name="value_longitude_show">-0.928116</string>
+    <string name="value_latitude_show">46.889602</string>
+    <string name="text_value_next_activity">Activité suivante</string>
+    <string name="desc_value_next_activity">Description de l\'activité suivante ...</string>
+    <string name="time_value_next_activity">Heure de l\'activité</string>
+    <!-- ListView -->
+    <string name="lv_time_string">m</string>
+
+
 </resources>

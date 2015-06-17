@@ -7,7 +7,7 @@
     <dimen name="activity_listview_vertical_margin">0dp</dimen>
     <dimen name="activity_listview_left_margin">0dp</dimen>
     <dimen name="activity_listview_right_margin">0dp</dimen>
-    <dimen name="title">17dp</dimen>
-    <dimen name="description">13dip</dimen>
-    <dimen name="time">12dip</dimen>
+    <dimen name="title">18dp</dimen>
+    <dimen name="description">14dp</dimen>
+    <dimen name="time">19dp</dimen>
 </resources>
