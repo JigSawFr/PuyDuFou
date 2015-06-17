@@ -1,10 +1,5 @@
 package com.example.coonax.coonax.adapter;
 
-import com.example.coonax.coonax.R;
-import com.example.coonax.coonax.model.Show;
-
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,12 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import com.example.coonax.coonax.R;
+import com.example.coonax.coonax.model.Shop;
 import org.parceler.apache.commons.lang.WordUtils;
+
+import java.util.List;
 
 /**
  * Projet       ~~ PuyDuFou ~~
  ****************************************
- * Créé par JigSaw le 15/06/2015 à 21:37
+ * Créé par JigSaw le 17/06/2015 à 03:45
  ****************************************
  *        ___ ______     ___ _       __
  *       / (_) ____/____/   | |     / /
@@ -27,26 +26,26 @@ import org.parceler.apache.commons.lang.WordUtils;
  *
  */
 
-public class ShowsAdapter extends BaseAdapter {
+public class ShopsAdapter extends BaseAdapter {
 
 
     private Activity activity;
     private LayoutInflater inflater;
-    private List<Show> showsList;
+    private List<Shop> shopsList;
 
-    public ShowsAdapter(Activity activity, List<Show> showsList) {
+    public ShopsAdapter(Activity activity, List<Shop> shopsList) {
         this.activity = activity;
-        this.showsList = showsList;
+        this.shopsList = shopsList;
     }
 
     @Override
     public int getCount() {
-        return showsList.size();
+        return shopsList.size();
     }
 
     @Override
     public Object getItem(int location) {
-        return showsList.get(location);
+        return shopsList.get(location);
     }
 
     @Override
@@ -58,17 +57,15 @@ public class ShowsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (inflater == null) { inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE); }
-        if (convertView == null) { convertView = inflater.inflate(R.layout.list_row, null); }
+        if (convertView == null) { convertView = inflater.inflate(R.layout.list_row_shops, null); }
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView description = (TextView) convertView.findViewById(R.id.description);
-        TextView time = (TextView) convertView.findViewById(R.id.time);
 
-        Show myShow = showsList.get(position);
-        title.setText(WordUtils.capitalize(myShow.getName()));
-        description.setText(myShow.getLongDescription());
-        convertView.setTag(new Integer(Integer.valueOf(myShow.getId())));
-        time.setText(myShow.getLenght().toString() + "m");
+        Shop myShop = shopsList.get(position);
+        title.setText(WordUtils.capitalize(myShop.getName()));
+        description.setText(myShop.getShortDescription());
+        convertView.setTag(new Integer(Integer.valueOf(myShop.getId())));
 
         return convertView;
     }

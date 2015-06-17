@@ -5,7 +5,7 @@ import com.google.gson.annotations.Expose;
 /**
  * Projet       ~~ PuyDuFou ~~
  ****************************************
- * Créé par JigSaw le 15/06/2015 à 21:37
+ * Créé par JigSaw le 17/06/2015 à 03:44
  ****************************************
  *        ___ ______     ___ _       __
  *       / (_) ____/____/   | |     / /
@@ -27,6 +27,8 @@ public class Shop {
     private String longitude;
     @Expose
     private String name;
+    @Expose
+    private Integer note;
     @Expose
     private String shortDescription;
 
@@ -118,6 +120,24 @@ public class Shop {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     *
+     * @return
+     * The note
+     */
+    public Integer getNote() {
+        return note;
+    }
+
+    /**
+     *
+     * @param note
+     * The note
+     */
+    public void setNote(Integer note) {
+        this.note = note;
     }
 
     /**

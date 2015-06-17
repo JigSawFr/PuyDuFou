@@ -7,13 +7,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import com.example.coonax.coonax.R;
+import com.example.coonax.coonax.model.Mark;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
 import com.squareup.picasso.Picasso;
@@ -73,12 +73,42 @@ public class ShowActivity extends Activity {
                @Override public void onRatingChanged(RatingBar mark, float rating, boolean fromUser){
                    //mark.setRating(rating);
                    if(fromUser) {
-                       Toast.makeText(getApplicationContext(), "Merci ! Votre note: " + Math.round(rating) + "/5", Toast.LENGTH_LONG).show();
-                       Log.i("PUYDUFOU", "RATING_ACTIVITY :: Notation de l'activité avec la note " + Math.round(rating) + "/5 (USER ? " + fromUser + ")");
+                       mark.setIsIndicator(true);
+                       Integer userRating = Math.round(rating);
+                       Toast.makeText(getApplicationContext(), "Merci ! Votre note: " + userRating + "/5", Toast.LENGTH_LONG).show();
+                       markShow(userRating);
+                       Log.i("PUYDUFOU", "RATING_ACTIVITY :: Notation de l'activité avec la note " + userRating + "/5 (USER ? " + fromUser + ")");
                    }
                }
            }
         );
+    }
+
+    private void markShow(int myUserMark) {
+        PuyDuFou puyDuFouService = new RestAdapter.Builder()
+                .setEndpoint(PuyDuFou.ENDPOINT)
+                .setLog(new AndroidLog("retrofit"))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build()
+                .create(PuyDuFou.class);
+        try {
+            puyDuFouService.showMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
+                @Override
+                public void success(Mark myMark, Response response) {
+                    Log.i("PUYDUFOU", "Le spectacle a bien été noté" + myMark.getStatut());
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    Log.w("PUYDUFOU", "Impossible de noter le spectacle");
+                    Log.w("PUYDUFOU", error);
+                    Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        catch (Exception e) {
+            Log.w("PUYDUFOU", "EXCEPTION: " + e);
+        }
     }
 
     private void refreshShow() {

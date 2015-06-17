@@ -7,7 +7,7 @@
     <string name="title_activity_show">Spectacle</string>
     <string name="title_activity_more_info_show">Spectacle</string>
     <string name="title_activity_restaurants">Restaurants</string>
-    <string name="title_activity_restaurant">La Boulangerie</string>
+    <string name="title_activity_restaurant">Restaurant</string>
     <string name="title_activity_shops">Boutiques</string>
     <string name="title_activity_schedule">Programme Puy du Fou</string>
     <string name="title_activity_best_schedule">Programme Conseillé</string>
@@ -21,7 +21,7 @@
     <string name="button_menu_restaurant">MENU</string>
     <string name="value_longitude_restaurant"> -0.928116</string>
     <string name="value_latitude_restaurant">46.889602</string>
-    <string name="title_activity_shop">Caverne des Pirates</string>
+    <string name="title_activity_shop">Boutique</string>
     <string name="text_desc_shop">Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti.</string>
     <string name="value_longitude_shop"> -0.928116</string>
     <string name="value_latitude_shop">46.889602</string>
