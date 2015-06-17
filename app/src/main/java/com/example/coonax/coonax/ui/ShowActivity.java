@@ -55,9 +55,12 @@ public class ShowActivity extends Activity {
         Button switchButtonMoreInfoShow = (Button) findViewById(R.id.button_moreinfo_show);
         switchButtonMoreInfoShow.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ShowActivity.this, MoreInfoShowActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                /* ~~ JIGSAW ## START ~~ */
+                Intent mySingleView = new Intent(getApplicationContext(), MoreInfoShowActivity.class);
+                mySingleView.putExtra("id", mySingleId);
+                startActivity(mySingleView);
+                /* ~~ JIGSAW ## END ~~ */
             }
         });
         /* ~~ COONAX ## END ~~ */
@@ -77,7 +80,7 @@ public class ShowActivity extends Activity {
                        Integer userRating = Math.round(rating);
                        Toast.makeText(getApplicationContext(), "Merci ! Votre note: " + userRating + "/5", Toast.LENGTH_LONG).show();
                        markShow(userRating);
-                       Log.i("PUYDUFOU", "RATING_ACTIVITY :: Notation de l'activité avec la note " + userRating + "/5 (USER ? " + fromUser + ")");
+                       Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Notation de l'activité avec la note " + userRating + "/5 (USER ? " + fromUser + ")");
                    }
                }
            }
@@ -95,19 +98,19 @@ public class ShowActivity extends Activity {
             puyDuFouService.showMarkAsync(mySingleId, myUserMark, new Callback<Mark>() {
                 @Override
                 public void success(Mark myMark, Response response) {
-                    Log.i("PUYDUFOU", "Le spectacle a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Le spectacle a bien été noté, nouvelle moyenne de " + myMark.getAverage() + "/5");
                 }
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.w("PUYDUFOU", "Impossible de noter le spectacle");
-                    Log.w("PUYDUFOU", error);
-                    Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: Impossible de noter le spectacle");
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: " + error);
+                            Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
             });
         }
         catch (Exception e) {
-            Log.w("PUYDUFOU", "EXCEPTION: " + e);
+            Log.w("PUYDUFOU", "SHOW_ACTIVITY :: EXCEPTION: " + e);
         }
     }
 
@@ -122,8 +125,8 @@ public class ShowActivity extends Activity {
             puyDuFouService.showAsync(mySingleId, new Callback<Show>() {
                 @Override
                 public void success(Show myShow, Response response) {
-                    Log.i("PUYDUFOU", "Le spectacle " + myShow.getName() + " a été réceptionné avec succès !");
-                    Log.i("PUYDUFOU", myShow.toString());
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Le spectacle " + myShow.getName() + " a été réceptionné avec succès !");
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITY :: " + myShow.toString());
 
                     ImageView image = (ImageView) findViewById(R.id.image_show);
                     TextView description = (TextView) findViewById(R.id.text_long_desc_show);
@@ -139,14 +142,14 @@ public class ShowActivity extends Activity {
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.w("PUYDUFOU", "Impossible de récupérer le spectacle");
-                    Log.w("PUYDUFOU", error);
-                    Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: Impossible de récupérer le spectacle");
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: " + error);
+                            Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
             });
         }
         catch (Exception e) {
-            Log.w("PUYDUFOU", "EXCEPTION: " + e);
+            Log.w("PUYDUFOU", "SHOW_ACTIVITY :: EXCEPTION: " + e);
         }
     }
 

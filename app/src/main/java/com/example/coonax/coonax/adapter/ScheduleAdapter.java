@@ -76,21 +76,10 @@ public class ScheduleAdapter extends BaseAdapter {
     }
 
     private String formatShowTime(String dateString) {
-        /*Date date = null;
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-        try {
-            date = format.parse(dateString);
-            Log.i("PUYDUFOU", "SCHEDULES_ACTIVITY :: Conversion de la date reçue -> " + dateString + " en " + date.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return "00";*/
-        //DateTime myDate = new DateTime(dateString);
         DateTimeFormatter myFormatDate = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZ");
         DateTime myDate = myFormatDate.parseDateTime(dateString);
         DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern("HH:mm");
         return myNewFormatDate.print(myDate);
-        //return myDate.getHourOfDay() + "h" + myDate.getMinuteOfHour();
     }
 
 }

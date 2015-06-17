@@ -105,7 +105,7 @@ public class ShowsActivity extends Activity {
             puyDuFouService.listShowAsync(new Callback<List<Show>>() {
                 @Override
                 public void success(List<Show> shows, Response response) {
-                    Log.i("PUYDUFOU", "Les " + shows.size() + " spectacles ont été réceptionnés avec succès !");
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITIES :: Les " + shows.size() + " spectacles ont été réceptionnés avec succès !");
                     Toast.makeText(getApplicationContext(), shows.size() + " spectacles disponibles", Toast.LENGTH_LONG).show();
                     myShowsList.clear();
                     myShowsList.addAll(shows);
