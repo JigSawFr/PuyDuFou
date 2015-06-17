@@ -32,6 +32,17 @@
     <string name="text__value_entree_menu">Salade de riz accompagné de thons</string>
     <string name="text_value_plat_menu">Entrecôte sauce béarnaise avec frites</string>
     <string name="text_value_dessert_menu">OEufs à la neige</string>
+    <string name="text_create_show">Date Création :</string>
+    <string name="text_nbactor_show">Nombre d\'Acteurs :</string>
+    <string name="text_mark_show">Note :</string>
+    <string name="text_history_show">Lien Historique</string>
+
+
+    <string name="text_value_create_show">2014</string>
+    <string name="text_value_nbactor_show">37</string>
+    <string name="text_value_history_link_show">Lorem ipsum dolor sit ame Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit</string>
+    <string name="value_longitude_show">-0.928116</string>
+    <string name="value_latitude_show">46.889602</string>
     <!-- ListView -->
     <string name="lv_time_string">m</string>
 
