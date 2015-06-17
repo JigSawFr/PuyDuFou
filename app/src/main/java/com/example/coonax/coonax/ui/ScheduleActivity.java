@@ -50,24 +50,24 @@ public class ScheduleActivity extends Activity {
         ab.setBackgroundDrawable(colorDrawable);
 
         //Bouton d'accès à l'activité BestScheduleActivity
-        Button switchButtonBestSchedule = (Button) findViewById(R.id.button_best_schedule);
+        /*Button switchButtonBestSchedule = (Button) findViewById(R.id.button_best_schedule);
         switchButtonBestSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ScheduleActivity.this, BestScheduleActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         //Bouton d'accès à l'activité MyScheduleActivity
-        /*Button switchButtonAddSchedule = (Button) findViewById(R.id.button_add_schedule);
+       /* Button switchButtonAddSchedule = (Button) findViewById(R.id.button_add_schedule);
         switchButtonAddSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ScheduleActivity.this, MyScheduleActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
         /* ~~ COONAX ## END ~~ */
 
         final SwipeRefreshLayout mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_schedules_layout);
