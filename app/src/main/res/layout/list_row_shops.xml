@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_row_selector"
+                android:padding="8dp" >
+
+    <!-- Titre -->
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title"
+            android:textStyle="bold"
+            android:textColor="@color/wet_asphalt"
+            android:layout_marginTop="10dp"
+            android:text="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+    <!-- Description -->
+    <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:maxWidth="290dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/description"
+            android:textSize="@dimen/description"
+            android:textColor="@color/concrete"
+            android:layout_marginBottom="10dp"
+            android:lines="2"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:editable="false"
+            android:enabled="false"
+            android:text="Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+
+
+</RelativeLayout>

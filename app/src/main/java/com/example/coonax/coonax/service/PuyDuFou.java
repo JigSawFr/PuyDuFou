@@ -30,6 +30,9 @@ public interface PuyDuFou {
     @GET("/com.puydufou.entity.shops/{id}")
     void shopAsync(@Path("id") int id, Callback<Shop> callback);
 
+    @GET("/com.puydufou.entity.shops/notes/{id}/{mark}")
+    void shopMarkAsync(@Path("id") int id, @Path("mark") int mark, Callback<Mark> callback);
+
     @GET("/com.puydufou.entity.shows")
     void listShowAsync(Callback<List<Show>> callback);
 

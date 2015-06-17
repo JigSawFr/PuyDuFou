@@ -16,7 +16,7 @@ public class PictureActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
 
-        //Affichage de la ActionBar coloré
+        //Affichage de la ActionBar colorÃ©
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#9b59b6"));
         ab.setBackgroundDrawable(colorDrawable);

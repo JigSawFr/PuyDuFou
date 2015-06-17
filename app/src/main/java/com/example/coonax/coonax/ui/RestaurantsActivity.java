@@ -94,7 +94,7 @@ public class RestaurantsActivity extends Activity {
             puyDuFouService.listRestaurantAsync(new Callback<List<Restaurant>>() {
                 @Override
                 public void success(List<Restaurant> restaurants, Response response) {
-                    Log.i("PUYDUFOU", "RESTAURANTS_ACTIVITY :: Les " + restaurants.size() + " restaurats ont été réceptionnés avec succès !");
+                    Log.i("PUYDUFOU", "RESTAURANTS_ACTIVITY :: Les " + restaurants.size() + " restaurants ont Ã©tÃ© rÃ©ceptionnÃ©s avec succÃ¨s !");
                     Toast.makeText(getApplicationContext(), restaurants.size() + " restaurants disponibles", Toast.LENGTH_LONG).show();
                     myRestaurantsList.clear();
                     myRestaurantsList.addAll(restaurants);
@@ -103,7 +103,7 @@ public class RestaurantsActivity extends Activity {
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.w("PUYDUFOU", "RESTAURANTS_ACTIVITY :: Impossible de récupérer les restaurants");
+                    Log.w("PUYDUFOU", "RESTAURANTS_ACTIVITY :: Impossible de rÃ©cupÃ©rer les restaurants");
                     Log.w("PUYDUFOU", "RESTAURANTS_ACTIVITY :: " + error);
                             Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
