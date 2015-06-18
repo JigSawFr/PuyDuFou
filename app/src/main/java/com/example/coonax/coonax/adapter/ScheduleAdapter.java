@@ -2,13 +2,10 @@ package com.example.coonax.coonax.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Schedule;
@@ -39,10 +36,13 @@ public class ScheduleAdapter extends BaseAdapter {
     protected Activity activity;
     protected LayoutInflater inflater;
     protected List<Schedule> schedulesList;
+    protected Context context;
+    protected Schedule mySchedule;
 
-    public ScheduleAdapter(Activity activity, List<Schedule> schedulesList) {
+    public ScheduleAdapter(Activity activity, List<Schedule> schedulesList, Context context) {
         this.activity = activity;
         this.schedulesList = schedulesList;
+        this.context = context;
     }
 
     @Override
@@ -64,14 +64,14 @@ public class ScheduleAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         if (inflater == null) { inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE); }
-        if (convertView == null) { convertView = inflater.inflate(R.layout.list_row_schedules, null); }
+        if (convertView == null) { convertView = inflater.inflate(R.layout.list_row_schedules_nocheck, null); }
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView description = (TextView) convertView.findViewById(R.id.description);
         TextView time = (TextView) convertView.findViewById(R.id.time);
 
 
-        final Schedule mySchedule = schedulesList.get(position);
+        mySchedule = schedulesList.get(position);
         title.setText(WordUtils.capitalize(mySchedule.getShow().getName()));
         description.setText(mySchedule.getShow().getLongDescription());
         convertView.setTag(new Integer(Integer.valueOf(mySchedule.getShow().getId())));

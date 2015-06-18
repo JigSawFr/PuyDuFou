@@ -26,6 +26,11 @@ public class Schedule implements Comparable<Schedule> {
     private Show show;
     @Expose
     private String startTime;
+    private boolean isChoosen;
+
+    {
+        isChoosen = false;
+    }
 
     /**
      *
@@ -81,6 +86,14 @@ public class Schedule implements Comparable<Schedule> {
         this.startTime = startTime;
     }
 
+
+    public boolean isChoosen() {
+        return isChoosen;
+    }
+
+    public void setIsChoosen(boolean b) {
+        this.isChoosen = b;
+    }
 
     @Override
     public int compareTo(Schedule mySchedule) {

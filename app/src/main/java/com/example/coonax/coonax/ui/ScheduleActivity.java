@@ -17,8 +17,14 @@ import android.widget.Toast;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.adapter.GenericAdapterView;
 import com.example.coonax.coonax.adapter.ScheduleAdapter;
+import com.example.coonax.coonax.adapter.ScheduleButtonAdapter;
 import com.example.coonax.coonax.model.Schedule;
 import com.example.coonax.coonax.service.PuyDuFou;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -36,6 +42,7 @@ public class ScheduleActivity extends Activity {
     private ListView mySchedule;
     private ScheduleAdapter myScheduleAdapter;
     private GenericAdapterView genericAdapterView = new GenericAdapterView();
+    private List<Schedule> myPreferedSchedules = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +57,7 @@ public class ScheduleActivity extends Activity {
 
         final SwipeRefreshLayout mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_schedules_layout);
         mySchedule = (ListView) findViewById(R.id.schedulesList);
-        myScheduleAdapter = new ScheduleAdapter(this, myScheduleList);
+        myScheduleAdapter = new ScheduleButtonAdapter(this, myScheduleList, getApplicationContext());
         mySchedule.setAdapter(myScheduleAdapter);
 
         mySchedule.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,15 +96,37 @@ public class ScheduleActivity extends Activity {
                 .build()
                 .create(PuyDuFou.class);
         try {
-            puyDuFouService.listScheduleAsync("09", "00", new Callback<List<Schedule>>() {
+            DateTime myDate;
+
+            if(!myPreferedSchedules.isEmpty())
+            {
+                Schedule myLastSchedule = myPreferedSchedules.get(myPreferedSchedules.size() - 1);
+                Log.i("PUYDUFOU", "SCHEDULES_ACTIVITY :: LATEST ACTIVITY IN USER CHOICE: startDate => " + myLastSchedule.getStartTime());
+                DateTimeFormatter parser = ISODateTimeFormat.dateTimeParser();
+                myDate = parser.parseDateTime(myLastSchedule.getStartTime());
+                myDate = myDate.withZone(DateTimeZone.forID("Europe/Paris"));
+                myDate = myDate.plusMinutes(myLastSchedule.getShow().getLenght());
+                myDate = myDate.plusMinutes(30);
+            }
+            else
+            {
+                myDate = new DateTime();
+            }
+            DateTimeFormatter myDateHoursFmt = DateTimeFormat.forPattern("HH");
+            DateTimeFormatter myDateMinutesFmt = DateTimeFormat.forPattern("mm");
+            String myDateHours = myDateHoursFmt.print(myDate);
+            String myDateMinutes = myDateMinutesFmt.print(myDate);
+            Log.i("PUYDUFOU", "SCHEDULES_ACTIVITY :: HEURE => " + myDateHours + " - MINUTE => " + myDateMinutes);
+
+            puyDuFouService.listScheduleAsync(myDateHours, myDateMinutes, new Callback<List<Schedule>>() {
                 @Override
                 public void success(List<Schedule> schedules, Response response) {
                     Log.i("PUYDUFOU", "SCHEDULES_ACTIVITY :: Les " + schedules.size() + " programmes ont été réceptionnés avec succès !");
-                    Toast.makeText(getApplicationContext(), schedules.size() + " programmes disponibles", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), schedules.size() + " programmes disponibles", Toast.LENGTH_SHORT).show();
                     Collections.sort(schedules);
                     myScheduleList.clear();
+                    myScheduleList.addAll(myPreferedSchedules);
                     myScheduleList.addAll(schedules);
-
                     myScheduleAdapter.notifyDataSetChanged();
                 }
 
@@ -114,6 +143,16 @@ public class ScheduleActivity extends Activity {
         }
     }
 
+    public void addScheduleToPersonnalsActivities(Schedule mySchedule) {
+        Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été ajouté au planning personnel !", Toast.LENGTH_SHORT).show();
+        myPreferedSchedules.add(mySchedule);
+        countPreferedSchedules();
+        refreshSchedulesList();
+    }
+
+    private void countPreferedSchedules() {
+        Log.d("PUYDUFOU", "SCHEDULES_ACTIVITY :: L'utilisateur souhaite participer à " + myPreferedSchedules.size() + " séances de spectacles pour le moment !");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

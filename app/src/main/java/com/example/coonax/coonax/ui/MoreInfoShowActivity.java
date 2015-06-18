@@ -13,7 +13,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.coonax.coonax.R;
-import com.example.coonax.coonax.adapter.ScheduleOptimizedAdapter;
+import com.example.coonax.coonax.adapter.ScheduleButtonAdapter;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
 import org.parceler.apache.commons.lang.WordUtils;
@@ -80,7 +80,7 @@ public class MoreInfoShowActivity extends Activity {
                     TextView latitude = (TextView) findViewById(R.id.text_value_latitude_more_show);
 
                     setTitle(WordUtils.capitalize(myShow.getName()));
-                    dateCreated.setText(ScheduleOptimizedAdapter.formatShowTime(myShow.getCreatedDate(), "MM/yy"));
+                    dateCreated.setText(ScheduleButtonAdapter.formatShowTime(myShow.getCreatedDate(), "MM/yy"));
                     actorsCount.setText(myShow.getActorsCount().toString());
                     mark.setRating(myShow.getNote().floatValue());
                     descHistorical.setText(myShow.getLongDescription());

@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.adapter.GenericAdapterView;
 import com.example.coonax.coonax.adapter.ScheduleAdapter;
-import com.example.coonax.coonax.adapter.ScheduleOptimizedAdapter;
 import com.example.coonax.coonax.model.Schedule;
 import com.example.coonax.coonax.service.PuyDuFou;
 import retrofit.Callback;
@@ -51,7 +50,7 @@ public class BestScheduleActivity extends Activity {
 
         final SwipeRefreshLayout mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_schedules_optimized_layout);
         mySchedule = (ListView) findViewById(R.id.schedulesOptimizedList);
-        myScheduleAdapter = new ScheduleOptimizedAdapter(this, myScheduleList);
+        myScheduleAdapter = new ScheduleAdapter(this, myScheduleList, getApplicationContext());
         mySchedule.setAdapter(myScheduleAdapter);
 
         mySchedule.setOnItemClickListener(new AdapterView.OnItemClickListener() {
