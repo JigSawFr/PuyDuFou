@@ -90,7 +90,7 @@ public class BestScheduleActivity extends Activity {
                 .build()
                 .create(PuyDuFou.class);
         try {
-            puyDuFouService.listOptimizedScheduleAsync("08", "30", "30", new Callback<List<Schedule>>() {
+            puyDuFouService.listOptimizedScheduleAsync("09", "00", "30", new Callback<List<Schedule>>() {
                 @Override
                 public void success(List<Schedule> schedules, Response response) {
                     Log.i("PUYDUFOU", "SCHEDULES_OPTIMIZED_ACTIVITY :: Les " + schedules.size() + " programmes ont été réceptionnés avec succès !");
