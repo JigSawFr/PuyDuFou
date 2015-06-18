@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Schedule;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.parceler.apache.commons.lang.WordUtils;
@@ -70,15 +71,16 @@ public class ScheduleAdapter extends BaseAdapter {
         title.setText(WordUtils.capitalize(mySchedule.getShow().getName()));
         description.setText(mySchedule.getShow().getLongDescription());
         convertView.setTag(new Integer(Integer.valueOf(mySchedule.getShow().getId())));
-        time.setText(formatShowTime(mySchedule.getStartTime()));
+        time.setText(formatShowTime(mySchedule.getStartTime(), "HH:mm"));
 
         return convertView;
     }
 
-    public static String formatShowTime(String dateString) {
+    public static String formatShowTime(String dateString, String pattern) {
         DateTimeFormatter myFormatDate = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZ");
         DateTime myDate = myFormatDate.parseDateTime(dateString);
-        DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern("HH:mm");
+        myDate = myDate.withZone(DateTimeZone.forID("Europe/Paris"));
+        DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern(pattern);
         //Log.i("PUYDUFOU", "DEBUG_DATE :: HEURE DU SHOW " + myNewFormatDate.print(myDate) + " !");
         return myNewFormatDate.print(myDate);
     }

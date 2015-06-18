@@ -13,11 +13,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.coonax.coonax.R;
+import com.example.coonax.coonax.adapter.ScheduleOptimizedAdapter;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.parceler.apache.commons.lang.WordUtils;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -82,7 +80,7 @@ public class MoreInfoShowActivity extends Activity {
                     TextView latitude = (TextView) findViewById(R.id.text_value_latitude_more_show);
 
                     setTitle(WordUtils.capitalize(myShow.getName()));
-                    dateCreated.setText(formatShowCreatedTime(myShow.getCreatedDate()));
+                    dateCreated.setText(ScheduleOptimizedAdapter.formatShowTime(myShow.getCreatedDate(), "MM/yy"));
                     actorsCount.setText(myShow.getActorsCount().toString());
                     mark.setRating(myShow.getNote().floatValue());
                     descHistorical.setText(myShow.getLongDescription());
@@ -101,13 +99,6 @@ public class MoreInfoShowActivity extends Activity {
         catch (Exception e) {
             Log.w("PUYDUFOU", "SHOW_MORE_ACTIVITY :: EXCEPTION: " + e);
         }
-    }
-
-    private String formatShowCreatedTime(String dateString) {
-        DateTimeFormatter myFormatDate = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZ");
-        DateTime myDate = myFormatDate.parseDateTime(dateString);
-        DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern("MM/yy");
-        return myNewFormatDate.print(myDate);
     }
 
     @Override

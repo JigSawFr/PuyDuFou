@@ -183,7 +183,7 @@ public class ShowActivity extends Activity {
 
                     while (ScheduleIterator.hasNext()) {
                         Schedule myScheduleShow = ScheduleIterator.next();
-                        timesShow.add(ScheduleAdapter.formatShowTime((String) myScheduleShow.getStartTime()));
+                        timesShow.add(ScheduleAdapter.formatShowTime((String) myScheduleShow.getStartTime(), "HH:mm"));
                     }
 
                     String descStr = "";
