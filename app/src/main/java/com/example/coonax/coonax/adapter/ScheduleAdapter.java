@@ -75,12 +75,12 @@ public class ScheduleAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private String formatShowTime(String dateString) {
+    public static String formatShowTime(String dateString) {
         DateTimeFormatter myFormatDate = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZ");
         DateTime myDate = myFormatDate.parseDateTime(dateString);
         DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern("HH:mm");
-        //Log.i("PUYDUFOU", "DEBUG_DATE :: HEURE DU SHOW " + myNewFormatDate.print(myDate.plusHours(1)) + " !");
-        return myNewFormatDate.print(myDate.plusHours(1));
+        //Log.i("PUYDUFOU", "DEBUG_DATE :: HEURE DU SHOW " + myNewFormatDate.print(myDate) + " !");
+        return myNewFormatDate.print(myDate);
     }
 
 }
