@@ -26,13 +26,13 @@
     <string name="text_desc_shop">Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti.</string>
     <string name="value_longitude_shop"> -0.928116</string>
     <string name="value_latitude_shop">46.889602</string>
-    <string name="text_price_menu">14 €</string>
+    <string name="text_price_menu">Prix</string>
     <string name="text_entree_menu">Entrée</string>
     <string name="text_plat_menu">Plat</string>
     <string name="text_dessert_menu">Dessert</string>
-    <string name="text__value_entree_menu">Salade de riz accompagné de thons</string>
-    <string name="text_value_plat_menu">Entrecôte sauce béarnaise avec frites</string>
-    <string name="text_value_dessert_menu">OEufs à la neige</string>
+    <string name="text__value_entree_menu">Chargement ...</string>
+    <string name="text_value_plat_menu">Chargement ...</string>
+    <string name="text_value_dessert_menu">Chargement ...</string>
     <string name="text_create_show">Date de Création :</string>
     <string name="text_nbactor_show">Nombre d\'Acteurs :</string>
     <string name="text_history_show">Historique</string>
