@@ -2,10 +2,13 @@ package com.example.coonax.coonax.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Schedule;
@@ -58,7 +61,7 @@ public class ScheduleAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         if (inflater == null) { inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE); }
         if (convertView == null) { convertView = inflater.inflate(R.layout.list_row_schedules, null); }
@@ -67,7 +70,8 @@ public class ScheduleAdapter extends BaseAdapter {
         TextView description = (TextView) convertView.findViewById(R.id.description);
         TextView time = (TextView) convertView.findViewById(R.id.time);
 
-        Schedule mySchedule = schedulesList.get(position);
+
+        final Schedule mySchedule = schedulesList.get(position);
         title.setText(WordUtils.capitalize(mySchedule.getShow().getName()));
         description.setText(mySchedule.getShow().getLongDescription());
         convertView.setTag(new Integer(Integer.valueOf(mySchedule.getShow().getId())));
