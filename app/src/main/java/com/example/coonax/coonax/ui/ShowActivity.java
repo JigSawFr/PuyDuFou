@@ -13,7 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import com.example.coonax.coonax.R;
+import com.example.coonax.coonax.adapter.ScheduleAdapter;
 import com.example.coonax.coonax.model.Mark;
+import com.example.coonax.coonax.model.Schedule;
 import com.example.coonax.coonax.model.Show;
 import com.example.coonax.coonax.service.PuyDuFou;
 import com.squareup.picasso.Picasso;
@@ -23,6 +25,10 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.Response;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Projet       ~~ PuyDuFou ~~
@@ -138,6 +144,8 @@ public class ShowActivity extends Activity {
                     time.setText(myShow.getLenght().toString() + " min.");
                     Picasso.with(getApplicationContext()).load(myShow.getImage()).placeholder(R.drawable.placeholder).fit().centerCrop().into(image);
                     mark.setRating(myShow.getNote().floatValue());
+
+                    refreshSchedulesShow();
                 }
 
                 @Override
@@ -145,6 +153,55 @@ public class ShowActivity extends Activity {
                     Log.w("PUYDUFOU", "SHOW_ACTIVITY :: Impossible de récupérer le spectacle");
                     Log.w("PUYDUFOU", "SHOW_ACTIVITY :: " + error);
                             Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        catch (Exception e) {
+            Log.w("PUYDUFOU", "SHOW_ACTIVITY :: EXCEPTION: " + e);
+        }
+    }
+
+    private void refreshSchedulesShow() {
+        PuyDuFou puyDuFouService = new RestAdapter.Builder()
+                .setEndpoint(PuyDuFou.ENDPOINT)
+                .setLog(new AndroidLog("retrofit"))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build()
+                .create(PuyDuFou.class);
+        try {
+            puyDuFouService.listScheduleShowAsync(mySingleId, new Callback<List<Schedule>>() {
+
+                @Override
+                public void success(List<Schedule> schedules, Response response) {
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Les programmations du spectacle ont été réceptionnées avec succès !");
+                    Log.i("PUYDUFOU", "SHOW_ACTIVITY :: " + schedules.toString());
+
+                    TextView times = (TextView) findViewById(R.id.text_value_times_show);
+
+                    Iterator<Schedule> ScheduleIterator = schedules.iterator();
+                    ArrayList<String> timesShow = new ArrayList<String>();
+
+                    while (ScheduleIterator.hasNext()) {
+                        Schedule myScheduleShow = ScheduleIterator.next();
+                        timesShow.add(ScheduleAdapter.formatShowTime((String) myScheduleShow.getStartTime(), "HH:mm"));
+                    }
+
+                    String descStr = "";
+                    for (String str : timesShow) {
+                        descStr += str + " ● ";
+                    }
+                    descStr = descStr.length() > 0 ? descStr.substring(0,
+                            descStr.length() - 2) : descStr;
+                    times.setText(descStr);
+                    times.setSelected(true);
+
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: Impossible de récupérer le spectacle");
+                    Log.w("PUYDUFOU", "SHOW_ACTIVITY :: " + error);
+                    Toast.makeText(getApplicationContext(), "FAIL" + error, Toast.LENGTH_LONG).show();
                 }
             });
         }

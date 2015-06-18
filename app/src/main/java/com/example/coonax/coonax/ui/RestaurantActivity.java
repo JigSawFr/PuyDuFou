@@ -9,10 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.*;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.model.Mark;
 import com.example.coonax.coonax.model.Restaurant;
@@ -52,6 +50,18 @@ public class RestaurantActivity extends Activity {
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#9b59b6"));
         ab.setBackgroundDrawable(colorDrawable);
+
+        Button switchButtonMenuRestaurant = (Button) findViewById(R.id.button_menu_restaurant);
+        switchButtonMenuRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /* ~~ JIGSAW ## START ~~ */
+                Intent mySingleView = new Intent(getApplicationContext(), MenuActivity.class);
+                mySingleView.putExtra("id", mySingleId);
+                startActivity(mySingleView);
+                /* ~~ JIGSAW ## END ~~ */
+            }
+        });
         /* ~~ COONAX ## END ~~ */
 
         Intent mySingleView = getIntent();
