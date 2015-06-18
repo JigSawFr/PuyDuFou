@@ -12,77 +12,209 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:layout_centerHorizontal="true"
             android:weightSum="1"
-            android:layout_marginTop="20dp"
             android:id="@+id/linearLayout7">
 
         <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:layout_height="45dp"
                 android:background="@color/green_sea_dark">
 
+            <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/image_best"
+                    android:background="@drawable/best"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"/>
+
             <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="252dp"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/text_value_next_activity"
-                    android:id="@+id/text_next_activity"
+                    android:text="Conseillé"
+                    android:id="@+id/text_best_schedule"
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                >
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/nephritis"
+                    android:layout_weight="1"
+                    android:weightSum="1">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/text_value_next_activity"
+                        android:id="@+id/text_next_activity"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:layout_weight="8.85"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/emerald"
+                    android:weightSum="1"
+                    >
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/time_value_next_activity"
+                        android:id="@+id/time_next_activity"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="136dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.59"
                 android:background="@color/green_sea"
-                android:weightSum="1">
+                android:weightSum="1"
+                >
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/desc_value_next_activity"
                     android:id="@+id/desc_next_activity"
-                    android:layout_weight="1.12"
+                    android:layout_weight="0.88"
                     android:textColor="@color/white"
-                    android:singleLine="false"/>
+                    android:singleLine="false"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1"
+            android:id="@+id/linearLayout8"
+            android:layout_marginTop="250dp">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/green_sea_dark">
+
+            <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/image_boy"
+                    android:background="@drawable/boy"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:focusableInTouchMode="false"/>
+
+            <TextView
+                    android:layout_width="252dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Mon Programme"
+                    android:id="@+id/text_my_schedule"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/nephritis"
+                    android:layout_weight="1"
+                    android:weightSum="1">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/text_value_next_activity_my_schedule"
+                        android:id="@+id/text_next_activity_my_schedule"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:layout_weight="8.85"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/emerald"
+                    android:weightSum="1">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/time_value_next_activity_my_schedule"
+                        android:id="@+id/text_next_hour_activity_my_schedule"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
-                android:background="@color/green_sea_dark"
-                android:weightSum="1"
-                android:layout_marginTop="0dp">
+                android:layout_height="136dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/green_sea"
+                android:weightSum="1">
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/time_value_next_activity"
-                    android:id="@+id/time_next_activity"
-                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc_value_next_activity_my_schedule"
+                    android:id="@+id/desc_value_next_activity_my_schedule"
+                    android:layout_weight="0.88"
                     android:textColor="@color/white"
+                    android:singleLine="false"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/image_compass"
-            android:layout_below="@+id/linearLayout7"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/compass"
-            android:layout_marginBottom="20dp"/>
 </RelativeLayout>

@@ -16,6 +16,7 @@
     <string name="title_activity_next_schedule">Prochaine Activité</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_schedules">Les Programmes</string>
+    <string name="title_activity_no_finish">Non développé</string>
     <string name="text_desc_short_show">Chargement de la description ...</string>
     <string name="time_show">N/A</string>
     <string name="text_desc_restaurant">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus consequat lacus, at luctus nisl porta ornare. Sed sagittis at massa at interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sed nisl dapibus, ullamcorper erat fermentum, facilisis est. Cras vitae vehicula est. Pellentesque leo dui, suscipit non finibus ut, accumsan nec dolor. Cras eget imperdiet ipsum. Vivamus sollicitudin ac libero at ultrices. Nulla placerat ex ut malesuada ultricies. In eu ornare ex. Nam tincidunt lobortis dictum. Fusce vitae suscipit neque.</string>
@@ -45,8 +46,12 @@
     <string name="text_value_next_activity">Activité suivante</string>
     <string name="desc_value_next_activity">Description de l\'activité suivante ...</string>
     <string name="time_value_next_activity">Heure de l\'activité</string>
+    <string name="text_value_next_activity_my_schedule">Aucune activité</string>
+    <string name="desc_value_next_activity_my_schedule">Aucune activité dans votre programme.</string>
+    <string name="time_value_next_activity_my_schedule">...</string>
     <!-- ListView -->
     <string name="lv_time_string">m</string>
+
 
 
 

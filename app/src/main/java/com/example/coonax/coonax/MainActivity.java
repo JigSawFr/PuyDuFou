@@ -66,6 +66,35 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button switchButtonFacebook = (Button) findViewById(R.id.button_facebook);
+        switchButtonFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,NoFinishActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button switchButtonTwitter = (Button) findViewById(R.id.button_twitter);
+        switchButtonTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,NoFinishActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button switchButtonGooglePlus = (Button) findViewById(R.id.button_googleplus);
+        switchButtonGooglePlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,NoFinishActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
         /* ~~ COONAX ## END ~~ */
     }
