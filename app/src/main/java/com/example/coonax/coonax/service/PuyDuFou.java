@@ -42,6 +42,9 @@ public interface PuyDuFou {
     @GET("/com.puydufou.entity.shows/notes/{id}/{mark}")
     void showMarkAsync(@Path("id") int id, @Path("mark") int mark, Callback<Mark> callback);
 
+    @GET("/com.puydufou.entity.shows/schedule/{id}")
+    void listScheduleShowAsync(@Path("id") int id, Callback<List<Schedule>> callback);
+
     @GET("/com.puydufou.entity.restaurants")
     void listRestaurantAsync(Callback<List<Restaurant>> callback);
 
@@ -51,12 +54,12 @@ public interface PuyDuFou {
     @GET("/com.puydufou.entity.restaurants/notes/{id}/{mark}")
     void restaurantMarkAsync(@Path("id") int id, @Path("mark") int mark, Callback<Mark> callback);
 
-    /*@GET("/com.puydufou.entity.shows/nextActivity/09/00")
-    void listScheduleAsync(Callback<List<Schedule>> callback);*/
+    @GET("/com.puydufou.entity.restaurants/menu/{id}")
+    void restaurantMenuAsync(@Path("id") int id, Callback<TheMenu> callback);
 
     @GET("/com.puydufou.entity.shows/nextActivities/{hour}/{minute}")
     void listScheduleAsync(@Path("hour") String hour, @Path("minute") String minute, Callback<List<Schedule>> callback);
 
-    /*@GET("/com.puydufou.entity.shows/nextActivities/09/00")
-    void listScheduleAsync(Callback<List<Schedule>> callback);*/
+    @GET("/com.puydufou.entity.shows/planning/{hour}/{minute}/{between}")
+    void listOptimizedScheduleAsync(@Path("hour") String hour, @Path("minute") String minute, @Path("between") String between, Callback<List<Schedule>> callback);
 }

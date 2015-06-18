@@ -1,79 +1,64 @@
-package com.example.coonax.coonax;
+package com.example.coonax.coonax.ui;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import com.example.coonax.coonax.ui.*;
+import com.example.coonax.coonax.R;
 
-/**
- * Projet       ~~ PuyDuFou ~~
- ****************************************
- * Créé par JigSaw le 15/06/2015 à 21:37
- ****************************************
- *        ___ ______     ___ _       __
- *       / (_) ____/____/   | |     / /
- *  __  / / / / __/ ___/ /| | | /| / /
- * / /_/ / / /_/ (__  ) ___ | |/ |/ /
- * \____/_/\____/____/_/  |_|__/|__/
- *
- */
-
-public class MainActivity extends Activity {
+public class SchedulesActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_schedules);
 
-        /* ~~ COONAX ## START ~~ */
-        Button switchButtonActivities = (Button) findViewById(R.id.button_activities);
+        ActionBar ab = getActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3498db"));
+        ab.setBackgroundDrawable(colorDrawable);
+
+        Button switchButtonActivities = (Button) findViewById(R.id.button_schedule_parc);
         switchButtonActivities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivitiesActivity.class);
+                Intent intent = new Intent(SchedulesActivity.this, ScheduleActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button switchButtonProgram = (Button) findViewById(R.id.button_program);
+        Button switchButtonProgram = (Button) findViewById(R.id.button_myschedule);
         switchButtonProgram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SchedulesActivity.class);
+                Intent intent = new Intent(SchedulesActivity.this, MyScheduleActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button switchButtonPhoto = (Button) findViewById(R.id.button_picture);
+        Button switchButtonPhoto = (Button) findViewById(R.id.button_bestschedule);
         switchButtonPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PictureActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button switchButtonNextSchedule = (Button) findViewById(R.id.button_next_activity);
-        switchButtonNextSchedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NextScheduleActivity.class);
+                Intent intent = new Intent(SchedulesActivity.this, BestScheduleActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        /* ~~ COONAX ## END ~~ */
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_schedules, menu);
         return true;
     }
 

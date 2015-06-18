@@ -1,6 +1,7 @@
 package com.example.coonax.coonax.model;
 
 import com.google.gson.annotations.Expose;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Projet       ~~ PuyDuFou ~~
@@ -19,6 +20,8 @@ public class Show {
 
     @Expose
     private Integer actorsCount;
+    @Expose
+    private String createdDate;
     @Expose
     private Integer id;
     @Expose
@@ -54,6 +57,24 @@ public class Show {
      */
     public void setActorsCount(Integer actorsCount) {
         this.actorsCount = actorsCount;
+    }
+
+    /**
+     *
+     * @return
+     * The createdDate
+     */
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    /**
+     *
+     * @param createdDate
+     * The createdDate
+     */
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
 
     /**
@@ -216,6 +237,11 @@ public class Show {
      */
     public void setShortDesciption(String shortDesciption) {
         this.shortDesciption = shortDesciption;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 
 }
