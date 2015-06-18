@@ -32,9 +32,9 @@ import java.util.List;
 public class ScheduleAdapter extends BaseAdapter {
 
 
-    private Activity activity;
-    private LayoutInflater inflater;
-    private List<Schedule> schedulesList;
+    protected Activity activity;
+    protected LayoutInflater inflater;
+    protected List<Schedule> schedulesList;
 
     public ScheduleAdapter(Activity activity, List<Schedule> schedulesList) {
         this.activity = activity;
@@ -79,7 +79,8 @@ public class ScheduleAdapter extends BaseAdapter {
         DateTimeFormatter myFormatDate = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZ");
         DateTime myDate = myFormatDate.parseDateTime(dateString);
         DateTimeFormatter myNewFormatDate = DateTimeFormat.forPattern("HH:mm");
-        return myNewFormatDate.print(myDate);
+        //Log.i("PUYDUFOU", "DEBUG_DATE :: HEURE DU SHOW " + myNewFormatDate.print(myDate.plusHours(1)) + " !");
+        return myNewFormatDate.print(myDate.plusHours(1));
     }
 
 }
