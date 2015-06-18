@@ -43,7 +43,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.59"
                 android:background="@color/green_sea"
-                android:weightSum="1">
+                android:weightSum="1"
+                >
 
             <TextView
                     android:layout_width="match_parent"
@@ -52,7 +53,8 @@
                     android:id="@+id/desc_next_activity"
                     android:layout_weight="1.12"
                     android:textColor="@color/white"
-                    android:singleLine="false"/>
+                    android:singleLine="false"
+                    android:layout_marginLeft="5dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -76,13 +78,14 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-            android:layout_width="wrap_content"
+    <Button
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/image_compass"
+            android:id="@+id/button_geo"
+            android:background="@drawable/compass"
             android:layout_below="@+id/linearLayout7"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/compass"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
 </RelativeLayout>
