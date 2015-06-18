@@ -115,7 +115,6 @@
                 android:layout_weight="0.34"
                 android:background="@color/wet_asphalt"
                 android:layout_marginTop="20dp">
-
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -124,7 +123,11 @@
                     android:id="@+id/text_value_times_show"
                     android:textColor="@color/white"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"/>
         </LinearLayout>
 
     </LinearLayout>

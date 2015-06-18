@@ -185,7 +185,7 @@ public class ShowActivity extends Activity {
                         Schedule myScheduleShow = ScheduleIterator.next();
                         timesShow.add(ScheduleAdapter.formatShowTime((String) myScheduleShow.getStartTime()));
                     }
-                    
+
                     String descStr = "";
                     for (String str : timesShow) {
                         descStr += str + " ● ";
@@ -193,6 +193,7 @@ public class ShowActivity extends Activity {
                     descStr = descStr.length() > 0 ? descStr.substring(0,
                             descStr.length() - 2) : descStr;
                     times.setText(descStr);
+                    times.setSelected(true);
 
                 }
 
