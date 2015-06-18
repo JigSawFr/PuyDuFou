@@ -81,6 +81,7 @@ public class Schedule implements Comparable<Schedule> {
         this.startTime = startTime;
     }
 
+
     @Override
     public int compareTo(Schedule mySchedule) {
         return getStartTime().compareTo(mySchedule.getStartTime());
