@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 import com.example.coonax.coonax.R;
 import com.example.coonax.coonax.adapter.GenericAdapterView;
 import com.example.coonax.coonax.adapter.ScheduleAdapter;
@@ -40,32 +42,10 @@ public class ScheduleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-
         /* ~~ COONAX ## START ~~ */
-        //Affichage de la ActionBar coloré
         ActionBar ab = getActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3498db"));
         ab.setBackgroundDrawable(colorDrawable);
-
-        //Bouton d'accès à l'activité BestScheduleActivity
-        /*Button switchButtonBestSchedule = (Button) findViewById(R.id.button_best_schedule);
-        switchButtonBestSchedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ScheduleActivity.this, BestScheduleActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-        //Bouton d'accès à l'activité MyScheduleActivity
-       /* Button switchButtonAddSchedule = (Button) findViewById(R.id.button_add_schedule);
-        switchButtonAddSchedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ScheduleActivity.this, MyScheduleActivity.class);
-                startActivity(intent);
-            }
-        });
         /* ~~ COONAX ## END ~~ */
 
         final SwipeRefreshLayout mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_schedules_layout);
