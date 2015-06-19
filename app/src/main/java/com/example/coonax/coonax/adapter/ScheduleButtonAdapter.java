@@ -48,7 +48,7 @@ public class ScheduleButtonAdapter extends ScheduleAdapter {
 
         Button buttonAdd = (Button) convertView.findViewById(R.id.button_add_new_schedule);
         if(super.mySchedule.isChoosen()) {
-            buttonAdd.setBackgroundResource(R.drawable.button_add_schedule);
+            buttonAdd.setBackgroundResource(R.drawable.remove_button);
         }
 
         buttonAdd.setTag(super.mySchedule);
@@ -57,9 +57,16 @@ public class ScheduleButtonAdapter extends ScheduleAdapter {
             @Override
             public void onClick(View view) {
                 Schedule mySchedule = (Schedule) view.getTag();
-                Log.d("PUYDUFOU", "SCHEDULES_ADAPTER :: Ajout du spectacle : " + mySchedule.getShow().getName() + " (ID=" + mySchedule.getShow().getId() + ") avec la séance de " + formatShowTime(mySchedule.getStartTime(), "HH:mm") + "(ID=" + mySchedule.getId() + ")");
-                mySchedule.setIsChoosen(true);
-                ((ScheduleActivity) view.getContext()).addScheduleToPersonnalsActivities(mySchedule);
+                if(!mySchedule.isChoosen()) {
+                    Log.d("PUYDUFOU", "SCHEDULES_ADAPTER :: Ajout du spectacle : " + mySchedule.getShow().getName() + " (ID=" + mySchedule.getShow().getId() + ") avec la séance de " + formatShowTime(mySchedule.getStartTime(), "HH:mm") + "(ID=" + mySchedule.getId() + ")");
+                    mySchedule.setIsChoosen(true);
+                    ((ScheduleActivity) view.getContext()).addScheduleToPersonnalsActivities(mySchedule);
+                }
+                else {
+                    Log.d("PUYDUFOU", "SCHEDULES_ADAPTER :: Suppression du spectacle : " + mySchedule.getShow().getName() + " (ID=" + mySchedule.getShow().getId() + ") avec la séance de " + formatShowTime(mySchedule.getStartTime(), "HH:mm") + "(ID=" + mySchedule.getId() + ")");
+                    mySchedule.setIsChoosen(false);
+                    ((ScheduleActivity) view.getContext()).deleteScheduleToPersonnalsActivities(mySchedule);
+                }
             }
 
         });

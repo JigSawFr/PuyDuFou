@@ -1,7 +1,15 @@
 package com.example.coonax.coonax.model;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Projet       ~~ PuyDuFou ~~
@@ -93,6 +101,26 @@ public class Schedule implements Comparable<Schedule> {
 
     public void setIsChoosen(boolean b) {
         this.isChoosen = b;
+    }
+
+    public void writeSchedule(List<Schedule> myPreferedSchedules, Context myContext) {
+        Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Sauvegarde du planning personnalisé !");
+        Gson gson = new Gson();
+        String value = gson.toJson(myPreferedSchedules);
+        SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
+        SharedPreferences.Editor e = prefs.edit();
+        e.putString("schedules", value);
+        e.commit();
+    }
+
+    public List<Schedule> readSchedule(Context myContext) {
+        Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Lecture du planning personnalisé !");
+        SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
+        String value = prefs.getString("schedules", null);
+        GsonBuilder gsonb = new GsonBuilder();
+        Gson gson = gsonb.create();
+        Schedule[] list = gson.fromJson(value, Schedule[].class);
+        return Arrays.asList(list);
     }
 
     @Override

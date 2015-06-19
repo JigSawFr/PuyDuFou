@@ -146,6 +146,15 @@ public class ScheduleActivity extends Activity {
     public void addScheduleToPersonnalsActivities(Schedule mySchedule) {
         Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été ajouté au planning personnel !", Toast.LENGTH_SHORT).show();
         myPreferedSchedules.add(mySchedule);
+        mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
+        countPreferedSchedules();
+        refreshSchedulesList();
+    }
+
+    public void deleteScheduleToPersonnalsActivities(Schedule mySchedule) {
+        Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été supprimé du planning personnel !", Toast.LENGTH_SHORT).show();
+        myPreferedSchedules.remove(mySchedule);
+        mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
         countPreferedSchedules();
         refreshSchedulesList();
     }
