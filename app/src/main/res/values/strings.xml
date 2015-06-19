@@ -51,6 +51,7 @@
     <string name="time_value_next_activity_my_schedule">...</string>
     <!-- ListView -->
     <string name="lv_time_string">m</string>
+    <string name="title_activity_map">MapActivity</string>
 
 
 

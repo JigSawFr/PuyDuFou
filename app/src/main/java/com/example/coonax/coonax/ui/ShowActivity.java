@@ -69,7 +69,6 @@ public class ShowActivity extends Activity {
                 /* ~~ JIGSAW ## END ~~ */
             }
         });
-        /* ~~ COONAX ## END ~~ */
 
         Intent mySingleView = getIntent();
         mark = (RatingBar) findViewById(R.id.rating_show);
@@ -130,7 +129,7 @@ public class ShowActivity extends Activity {
         try {
             puyDuFouService.showAsync(mySingleId, new Callback<Show>() {
                 @Override
-                public void success(Show myShow, Response response) {
+                public void success(final Show myShow, Response response) {
                     Log.i("PUYDUFOU", "SHOW_ACTIVITY :: Le spectacle " + myShow.getName() + " a été réceptionné avec succès !");
                     Log.i("PUYDUFOU", "SHOW_ACTIVITY :: " + myShow.toString());
 
@@ -144,6 +143,19 @@ public class ShowActivity extends Activity {
                     time.setText(myShow.getLenght().toString() + " min.");
                     Picasso.with(getApplicationContext()).load(myShow.getImage()).placeholder(R.drawable.placeholder).fit().centerCrop().into(image);
                     mark.setRating(myShow.getNote().floatValue());
+
+                    Button switchButtonLocalisationShow = (Button) findViewById(R.id.button_localisation);
+                    switchButtonLocalisationShow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                /* ~~ JIGSAW ## START ~~ */
+                            Intent mySingleView = new Intent(getApplicationContext(), MapActivity.class);
+                            mySingleView.putExtra("name", myShow.getName());
+                            startActivity(mySingleView);
+                /* ~~ JIGSAW ## END ~~ */
+                        }
+                    });
+        /* ~~ COONAX ## END ~~ */
 
                     refreshSchedulesShow();
                 }

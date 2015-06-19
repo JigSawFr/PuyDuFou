@@ -103,6 +103,19 @@ public class Schedule implements Comparable<Schedule> {
         this.isChoosen = b;
     }
 
+    public boolean checkSchedule(List<Schedule> myPreferedSchedules, Context myContext) {
+        SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
+        SharedPreferences.Editor e;
+        if(!prefs.contains("initialized")){
+            e = prefs.edit();
+            e.putBoolean("initialized", true);
+            e.commit();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
     public void writeSchedule(List<Schedule> myPreferedSchedules, Context myContext) {
         Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Sauvegarde du planning personnalisé !");
         Gson gson = new Gson();
