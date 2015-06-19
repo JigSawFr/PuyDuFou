@@ -15,9 +15,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="210dp"
+            android:layout_marginBottom="240dp"
             android:weightSum="1"
-            >
+            android:id="@+id/linearLayout9">
 
         <ImageView
             android:layout_width="match_parent"
@@ -32,10 +32,10 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="180dp"
-        android:weightSum="1" >
+        android:layout_marginTop="150dp"
+        android:weightSum="1"
+        android:layout_alignTop="@+id/linearLayout9"
+        android:layout_alignParentEnd="true">
 
         <RatingBar
                 android:layout_width="wrap_content"
@@ -46,9 +46,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="129dp"
             android:id="@+id/scrollView_desc_shop"
-            android:layout_weight="0.46" >
+                >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -59,13 +59,20 @@
                 android:textSize="10pt" />
         </ScrollView>
 
+        <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/button_localisation"
+                android:background="@drawable/localisation"
+                android:layout_marginTop="16dp"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="33dp"
             android:background="@color/peter_river_dark"
             android:weightSum="1"
-            android:layout_marginTop="30dp">
+                >
 
             <TextView
                 android:layout_width="wrap_content"

@@ -4,5 +4,6 @@
     <item android:id="@+id/reset_schedules_perso"
           android:title="Réinitialiser mon programme"
           android:orderInCategory="100"
-          android:showAsAction="never"/>
+          android:showAsAction="never"
+            />
 </menu>
