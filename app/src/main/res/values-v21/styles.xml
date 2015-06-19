@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:actionMenuTextColor">@color/wet_asphalt</item>
+        <item name="android:textColorSecondary">@color/wet_asphalt</item>
         <item name="android:colorPrimary">@color/concrete</item>
         <item name="android:colorPrimaryDark">@color/black</item>
         <item name="android:colorAccent">@color/orange</item>
         <item name="android:textColorPrimary">@color/white</item>
+
     </style>
 </resources>
