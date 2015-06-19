@@ -144,19 +144,6 @@ public class ShowActivity extends Activity {
                     Picasso.with(getApplicationContext()).load(myShow.getImage()).placeholder(R.drawable.placeholder).fit().centerCrop().into(image);
                     mark.setRating(myShow.getNote().floatValue());
 
-                    Button switchButtonLocalisationShow = (Button) findViewById(R.id.button_localisation);
-                    switchButtonLocalisationShow.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                /* ~~ JIGSAW ## START ~~ */
-                            Intent mySingleView = new Intent(getApplicationContext(), MapActivity.class);
-                            mySingleView.putExtra("name", myShow.getName());
-                            startActivity(mySingleView);
-                /* ~~ JIGSAW ## END ~~ */
-                        }
-                    });
-        /* ~~ COONAX ## END ~~ */
-
                     refreshSchedulesShow();
                 }
 

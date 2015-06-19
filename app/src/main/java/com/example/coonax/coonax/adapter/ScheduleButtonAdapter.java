@@ -48,7 +48,8 @@ public class ScheduleButtonAdapter extends ScheduleAdapter {
 
         Button buttonAdd = (Button) convertView.findViewById(R.id.button_add_new_schedule);
         if(super.mySchedule.isChoosen()) {
-            buttonAdd.setBackgroundResource(R.drawable.remove_button);
+            //buttonAdd.setBackgroundResource(R.drawable.remove_button);
+            //buttonAdd.setVisibility(View.GONE);
         }
 
         buttonAdd.setTag(super.mySchedule);

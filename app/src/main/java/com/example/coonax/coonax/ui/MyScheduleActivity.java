@@ -78,12 +78,17 @@ public class MyScheduleActivity extends Activity {
     private void refreshSchedulesList() {
         Schedule mSchedules = new Schedule();
         List<Schedule> schedules = mSchedules.readSchedule(getApplicationContext());
-        Log.i("PUYDUFOU", "SCHEDULES_PERSO_ACTIVITY :: Les " + schedules.size() + " programmes ont été chargés de la mémoire avec succès !");
-        Toast.makeText(getApplicationContext(), schedules.size() + " programmes disponibles", Toast.LENGTH_SHORT).show();
-        Collections.sort(schedules);
-        myScheduleList.clear();
-        myScheduleList.addAll(schedules);
-        myScheduleAdapter.notifyDataSetChanged();
+        if(schedules != null) {
+            Log.i("PUYDUFOU", "SCHEDULES_PERSO_ACTIVITY :: Les " + schedules.size() + " programmes ont été chargés de la mémoire avec succès !");
+            Toast.makeText(getApplicationContext(), schedules.size() + " programmes disponibles", Toast.LENGTH_SHORT).show();
+            Collections.sort(schedules);
+            myScheduleList.clear();
+            myScheduleList.addAll(schedules);
+            myScheduleAdapter.notifyDataSetChanged();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Aucun spectacle dans votre programmation !", Toast.LENGTH_LONG).show();
+        }
     }
 
 

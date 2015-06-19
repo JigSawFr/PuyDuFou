@@ -43,6 +43,7 @@ public class ScheduleActivity extends Activity {
     private ScheduleAdapter myScheduleAdapter;
     private GenericAdapterView genericAdapterView = new GenericAdapterView();
     private List<Schedule> myPreferedSchedules = new ArrayList<>();
+    private Schedule mSchedules = new Schedule();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +90,15 @@ public class ScheduleActivity extends Activity {
     }
 
     private void refreshSchedulesList() {
+        List<Schedule> schedules = mSchedules.readSchedule(getApplicationContext());
+        if(schedules != null) {
+            Log.i("PUYDUFOU", "SCHEDULES_PERSO_ACTIVITY :: Les " + schedules.size() + " programmes ont été chargés de la mémoire avec succès !");
+            Toast.makeText(getApplicationContext(), schedules.size() + " programmes disponibles", Toast.LENGTH_SHORT).show();
+            if (schedules.size() > 0) {
+                myPreferedSchedules.addAll(schedules);
+            }
+        }
+
         PuyDuFou puyDuFouService = new RestAdapter.Builder()
                 .setEndpoint(PuyDuFou.ENDPOINT)
                 .setLog(new AndroidLog("retrofit"))
@@ -144,19 +154,23 @@ public class ScheduleActivity extends Activity {
     }
 
     public void addScheduleToPersonnalsActivities(Schedule mySchedule) {
-        Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été ajouté au planning personnel !", Toast.LENGTH_SHORT).show();
-        myPreferedSchedules.add(mySchedule);
-        mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
-        countPreferedSchedules();
-        refreshSchedulesList();
+        /*if(!myPreferedSchedules.contains(mySchedule)) {*/
+            Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été ajouté au planning personnel !", Toast.LENGTH_SHORT).show();
+            myPreferedSchedules.add(mySchedule);
+            mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
+            countPreferedSchedules();
+            refreshSchedulesList();
+        //}
     }
 
     public void deleteScheduleToPersonnalsActivities(Schedule mySchedule) {
-        Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été supprimé du planning personnel !", Toast.LENGTH_SHORT).show();
-        myPreferedSchedules.remove(mySchedule);
-        mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
-        countPreferedSchedules();
-        refreshSchedulesList();
+        //if(myPreferedSchedules.contains(mySchedule)) {
+            Toast.makeText(getApplicationContext(), "Le spectacle " + mySchedule.getShow().getName() + " a été supprimé du planning personnel !", Toast.LENGTH_SHORT).show();
+            myPreferedSchedules.remove(mySchedule);
+            mySchedule.writeSchedule(myPreferedSchedules, getApplicationContext());
+            countPreferedSchedules();
+            refreshSchedulesList();
+        //}
     }
 
     private void countPreferedSchedules() {
@@ -178,8 +192,10 @@ public class ScheduleActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.reset_schedules_perso) {
+            mSchedules.deleteSchedule(getApplicationContext());
+            myPreferedSchedules.clear();
+            refreshSchedulesList();
         }
 
         return super.onOptionsItemSelected(item);

@@ -103,7 +103,7 @@ public class Schedule implements Comparable<Schedule> {
         this.isChoosen = b;
     }
 
-    public boolean checkSchedule(List<Schedule> myPreferedSchedules, Context myContext) {
+    public boolean checkSchedule(Context myContext) {
         SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
         SharedPreferences.Editor e;
         if(!prefs.contains("initialized")){
@@ -116,6 +116,7 @@ public class Schedule implements Comparable<Schedule> {
             return true;
         }
     }
+
     public void writeSchedule(List<Schedule> myPreferedSchedules, Context myContext) {
         Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Sauvegarde du planning personnalisé !");
         Gson gson = new Gson();
@@ -126,14 +127,29 @@ public class Schedule implements Comparable<Schedule> {
         e.commit();
     }
 
+    public void deleteSchedule(Context myContext) {
+        Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Effacement du planning personnalisé !");
+        if(checkSchedule(myContext)) {
+            SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
+            SharedPreferences.Editor e = prefs.edit();
+            e.clear();
+            e.commit();
+        }
+    }
+
     public List<Schedule> readSchedule(Context myContext) {
         Log.d("PUYDUFOU", "SCHEDULE_MODEL :: Lecture du planning personnalisé !");
         SharedPreferences prefs = myContext.getSharedPreferences("myPreferedSchedules", Context.MODE_PRIVATE);
         String value = prefs.getString("schedules", null);
         GsonBuilder gsonb = new GsonBuilder();
         Gson gson = gsonb.create();
-        Schedule[] list = gson.fromJson(value, Schedule[].class);
-        return Arrays.asList(list);
+        Schedule[] list = null;
+        list = gson.fromJson(value, Schedule[].class);
+        if(list != null) {
+            return Arrays.asList(list);
+        } else {
+            return null;
+        }
     }
 
     @Override
